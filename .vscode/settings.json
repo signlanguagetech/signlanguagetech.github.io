@@ -1,0 +1,14 @@
+{
+    "angular-schematics.schematicsDefaultOptions": {
+        "angular-*": {
+            "style": "scss",
+            "externalTemplate": true
+        },
+        "angular-component": {
+            "skipDisplayBlock": true
+        }
+    },
+    "cSpell.words": [
+        "Vlogs"
+    ]
+}
