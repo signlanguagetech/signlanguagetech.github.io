@@ -34,6 +34,9 @@ jobs:
       name: github-pages
       url: ${{ vars.GITHUB_PAGE_URL }}
     steps:
+      - name: Run Bash
+        shell: bash
+        run: echo "Hello World"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
