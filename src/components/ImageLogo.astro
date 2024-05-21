@@ -1,0 +1,17 @@
+---
+import { Image } from "astro:assets";
+import sltLogo from "../assets/slt-logo.jpg";
+---
+
+<Image
+  class="slt-logo"
+  src={sltLogo}
+  alt="sign language tech logo"
+  loading="lazy"
+/>
+
+<style>
+  .slt-logo {
+    width: 50px;
+  }
+</style>
