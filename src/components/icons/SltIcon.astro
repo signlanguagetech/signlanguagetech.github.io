@@ -1,0 +1,44 @@
+---
+import type { Pixel } from "../../model/model";
+
+export interface Props {
+  readonly height: Pixel;
+  readonly width: Pixel;
+}
+
+const { height, width } = Astro.props;
+---
+
+<svg
+  version="1.2"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 500 500"
+  width={width}
+  height={height}
+>
+  <title>new-slt-logo-final</title>
+  <style>
+    .s0 {
+      fill: #000000;
+    }
+    .s1 {
+      fill: #ffffff;
+      stroke: #000000;
+      paint-order: stroke fill markers;
+      stroke-linejoin: round;
+      stroke-width: 6;
+    }
+  </style>
+  <path
+    id="Shape 1 copy 4"
+    fill-rule="evenodd"
+    class="s0"
+    d="m204.3 61.5c-13.5-7.1-30.6-7.3-44.4-0.7-13.8 6.6-22.4 19-22.4 32.5v273.3c0 13.5 8.6 26 22.4 32.6 13.8 6.6 30.9 6.2 44.4-0.7l263.7-136.7c13.1-6.8 21.1-18.8 21.1-31.8 0-13.1-8-25-21.1-31.9z"
+  ></path>
+  <path
+    id="Shape 1 copy 5"
+    fill-rule="evenodd"
+    class="s1"
+    d="m62.1 131.6c-14.1-2.2-29.3 2.8-39.5 12.8-10.2 10-14.1 23.7-10 35.6l82.9 242c4.1 11.9 15.5 20.3 29.7 22 14.3 1.6 29.2-3.8 39.1-14.1l192-201c9.5-9.9 12.9-23 9-34.5-4-11.6-14.7-19.7-28.3-21.8z"
+  ></path>
+</svg>
