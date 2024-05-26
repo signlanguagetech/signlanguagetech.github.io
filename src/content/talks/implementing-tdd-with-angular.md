@@ -7,8 +7,7 @@ thumbnail: '/talks-photos/implementing-tdd-with-angular-small.webp'
 ---
 
 <iframe 
-  width="560" 
-  height="315" 
+  class="youtube-frame"
   src="https://www.youtube.com/embed/_RCTzxSRrxU?si=xzqjNc8f5goyNbXe"
   title="YouTube video player" 
   frameborder="0"

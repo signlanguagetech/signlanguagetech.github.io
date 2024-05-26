@@ -7,8 +7,7 @@ thumbnail: '/talks-photos/nodejs-meets-redux-small.webp'
 ---
 
 <iframe 
-  width="560" 
-  height="315" 
+  class="youtube-frame"
   src="https://www.youtube.com/live/NcZ9TtP_G6s?si=z0uyPFjhlHibFeGN"
   title="YouTube video player" 
   frameborder="0"
