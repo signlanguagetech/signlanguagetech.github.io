@@ -1,11 +1,8 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
-import VlogPost from '../../layouts/VlogPost.astro';
+import Layout from '../../layouts/Layout.astro';
 
-const subTitle = SITE_TITLE + ' | About Me';
+const title = SITE_TITLE + ' | About Me';
 const description = `I am Milad as an experienced Software Engineer with over 9
         years in web services, I've been working on countless projects, each
         presenting its unique potentials and challenges. Every challenge
@@ -14,50 +11,42 @@ const description = `I am Milad as an experienced Software Engineer with over 9
         knowledge, and that's why this Sign Language Tech was born into here.`;
 ---
 
-<html lang='en'>
-  <head>
-    <BaseHead title={subTitle} description={description} />
-  </head>
+<Layout title={title} description={description}>
+  <main>
+    <h2>Established, December 2020</h2>
 
-  <body>
-    <Header />
-    <main>
-      <h2>Established, December 2020</h2>
+    <p>
+      Hey there! I am Milad as an experienced Software Engineer with over 9
+      years in web services, I've been working on countless projects, each
+      presenting its unique potentials and challenges. Every challenge overcome
+      has enriched my knowledge base and fine-tuned my expertise. My journey
+      thus far has fueled my desire to share my accumulated wealth of knowledge,
+      and that's why this Sign Language Tech was born into here.
+    </p>
 
-      <p>
-        Hey there! I am Milad as an experienced Software Engineer with over 9
-        years in web services, I've been working on countless projects, each
-        presenting its unique potentials and challenges. Every challenge
-        overcome has enriched my knowledge base and fine-tuned my expertise. My
-        journey thus far has fueled my desire to share my accumulated wealth of
-        knowledge, and that's why this Sign Language Tech was born into here.
-      </p>
+    <p>
+      But why? well, Here, you'll find extensive, professional, and
+      comprehensive discussions on web development, delivered in a captivating
+      and user-friendly manner with International/American Sign Language. Beyond
+      coding and software language, I want to bridge the communication gap and
+      make this intriguing world of web development accessible to the deaf
+      community. An important part of my mission is to bring on-board deaf
+      experts who will share their valuable insights accumulated from years of
+      experience in their respective fields. My hope is that their unique
+      perspectives and advice will present you with a more profound
+      understanding of the multiple approaches and objectives prevalent in our
+      field.
+    </p>
 
-      <p>
-        But why? well, Here, you'll find extensive, professional, and
-        comprehensive discussions on web development, delivered in a captivating
-        and user-friendly manner with International/American Sign Language.
-        Beyond coding and software language, I want to bridge the communication
-        gap and make this intriguing world of web development accessible to the
-        deaf community. An important part of my mission is to bring on-board
-        deaf experts who will share their valuable insights accumulated from
-        years of experience in their respective fields. My hope is that their
-        unique perspectives and advice will present you with a more profound
-        understanding of the multiple approaches and objectives prevalent in our
-        field.
-      </p>
-
-      <p>
-        However, this is not only about tutorials and interviews. I also plan to
-        organize interactive events where experts can offer presentations and
-        productive workshops. This will not only provide an opportunity for you
-        to interact with experts but also offer the chance to learn from more
-        hands-on experiences. This platform is dedicated to supporting your
-        career growth, fostering community spirit, and providing relevant
-        workshops to hone your skills. Stay tuned and join us on this
-        enlightening journey in web development!
-      </p>
-    </main>
-    <Footer />
-  </body>
-</html>
+    <p>
+      However, this is not only about tutorials and interviews. I also plan to
+      organize interactive events where experts can offer presentations and
+      productive workshops. This will not only provide an opportunity for you to
+      interact with experts but also offer the chance to learn from more
+      hands-on experiences. This platform is dedicated to supporting your career
+      growth, fostering community spirit, and providing relevant workshops to
+      hone your skills. Stay tuned and join us on this enlightening journey in
+      web development!
+    </p>
+  </main>
+</Layout>

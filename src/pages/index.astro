@@ -1,21 +1,13 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/Layout.astro';
+
+const subTitle = SITE_TITLE + ' | inspring talks';
+const subDescription = 'talks';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-
-  <body>
-    <Header />
-    <main>
-      
-    </main>
-    <Footer />
-  </body>
-</html>
+<Layout title={subTitle} description={subDescription}>
+  <main>
+    <h1>Latest</h1>
+  </main>
+</Layout>

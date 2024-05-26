@@ -12,15 +12,13 @@ const talks = (await getCollection('talks')).sort(
 );
 
 const subTitle = SITE_TITLE + ' | inspring talks';
-const subDescription = 'talks';
+const subDescription = `${SITE_DESCRIPTION} | talks`;
 ---
 
-<!doctype html>
 <html lang='en'>
   <head>
     <BaseHead title={subTitle} description={subDescription} />
     <style>
-
       .talks-list {
         list-style-type: none;
         margin: 0;
