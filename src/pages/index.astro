@@ -1,13 +1,108 @@
 ---
+import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Layout from '../layouts/Layout.astro';
+import FormattedDate from '../components/FormattedDate.astro';
 
-const subTitle = SITE_TITLE + ' | inspring talks';
-const subDescription = 'talks';
+const subTitle = SITE_TITLE + ' | inspring items';
+const subDescription = `${SITE_DESCRIPTION} | latest update`;
+
+const talks = await getCollection('talks');
+const vlogs = await getCollection('vlogs');
+
+const latestVideos = [...talks, ...vlogs].sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
 ---
 
 <Layout title={subTitle} description={subDescription}>
   <main>
     <h1>Latest</h1>
+    <section>
+      <ul class='list'>
+        {
+          latestVideos.map((item) => (
+            <li class='item'>
+              <a class='item-link' href={`/${item.collection}/${item.slug}/`}>
+                <img
+                  class='item-thumbnail'
+                  width='200px'
+                  height='100px'
+                  src={item.data.thumbnail}
+                  alt={item.data.alt}
+                />
+              </a>
+              <div class='item-title-description-group'>
+                <h4 class='item-title'>{item.data.title}</h4>
+                <div class='item-description'>{item.data.description}</div>
+              </div>
+              <div class='item-date-speaker-group'>
+                <FormattedDate date={item.data.pubDate} />
+                <span class='item-speaker'>{item.data.speaker}</span>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    border: 1px solid rgb(var(--gray));
+  }
+
+  .item:hover {
+    box-shadow: var(--box-shadow);
+  }
+
+  .item-thumbnail {
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .item-title {
+    color: rgb(var(--black));
+    font-size: 24px;
+  }
+
+  .item-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 20px;
+  }
+
+  .item-title-description-group {
+    flex-grow: 1;
+    width: 200px;
+  }
+
+  .item-date {
+    color: rgb(var(--gray));
+  }
+
+  .item-date-speaker-group {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+  }
+
+  .item-speaker {
+    line-height: 1;
+  }
+</style>
