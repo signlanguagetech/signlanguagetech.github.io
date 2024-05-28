@@ -3,13 +3,13 @@ import { type CollectionEntry, getCollection } from 'astro:content';
 import TalkPost from '../../layouts/TalkPost.astro';
 
 export async function getStaticPaths() {
-	const talks = await getCollection('talks');
+	const talks = await getCollection('talk');
 	return talks.map(talk => ({
 		params: { slug: talk.slug },
 		props: talk,
 	}));
 }
-type Props = CollectionEntry<'talks'>;
+type Props = CollectionEntry<'talk'>;
 
 const talk = Astro.props;
 const { Content } = await talk.render();
@@ -17,4 +17,4 @@ const { Content } = await talk.render();
 
 <TalkPost {...talk.data}>
 	<Content />
-</VlogPost>
+</TalkPost>

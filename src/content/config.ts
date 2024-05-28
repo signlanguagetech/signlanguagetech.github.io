@@ -12,7 +12,7 @@ const videoCollectionSchemaBase = z.object({
 
 export type VideoCollectionSchemaBase = typeof videoCollectionSchemaBase;
 
-const vlogCollection = defineCollection({
+const videoCollection = defineCollection({
   type: 'content',
   schema: videoCollectionSchemaBase,
 });
@@ -23,6 +23,6 @@ const talkCollection = defineCollection({
 });
 
 export const collections = {
-  vlogs: vlogCollection,
-  talks: talkCollection,
+  video: videoCollection,
+  talk: talkCollection,
 };

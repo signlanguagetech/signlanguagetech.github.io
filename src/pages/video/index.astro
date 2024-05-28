@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import Layout from '../../layouts/Layout.astro';
+import StripeList from '../../components/StripeList.astro';
+
+const subTitle = SITE_TITLE + ' | videos';
+const subDescription = `${SITE_DESCRIPTION} | videos updated`;
+
+const videos = (await getCollection('video')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title={subTitle} description={subDescription}>
+  <main class='main'>
+    <aside class='aside'>
+      <h3>All videos</h3>
+      <ul>
+        <li>Angular (1)</li>
+        <li>HTML (3)</li>
+        <li>Effect (4)</li>
+      </ul>
+    </aside>
+    <section class='videos-section'>
+      <StripeList videoContents={videos} showThumbnail={false}/>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .main {
+    display: flex;
+    gap: 20px;
+  }
+
+  .videos-section {
+    width: 100%;
+  }
+</style>

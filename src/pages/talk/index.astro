@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+
+import BaseHead from '../../components/BaseHead.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import StripeList from '../../components/StripeList.astro';
+
+const talks = (await getCollection('talk')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const subTitle = SITE_TITLE + ' | inspring talks';
+const subDescription = `${SITE_DESCRIPTION} | talks`;
+---
+
+<html lang='en'>
+  <head>
+    <BaseHead title={subTitle} description={subDescription} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class='talks-section'>
+        <StripeList videoContents={talks} />
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>

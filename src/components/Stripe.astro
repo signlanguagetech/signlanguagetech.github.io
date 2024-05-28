@@ -1,0 +1,72 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  videoContent: CollectionEntry<'talk' | 'video'>;
+  showThumbnail: boolean;
+}
+
+const { videoContent, showThumbnail } = Astro.props;
+---
+
+{
+  showThumbnail && (
+    <a class='link' href={`/${videoContent.collection}/${videoContent.slug}/`}>
+      <img
+        class='thumbnail'
+        width='200px'
+        height='100px'
+        src={videoContent.data.thumbnail}
+        alt={videoContent.data.alt}
+      />
+    </a>
+  )
+}
+<div class='title-description-group'>
+  <h4 class='title'>{videoContent.data.title}</h4>
+  <div class='description'>{videoContent.data.description}</div>
+</div>
+<div class='date-speaker-group'>
+  <FormattedDate class:list={['date']} date={videoContent.data.pubDate} />
+  <span class='speaker'>{videoContent.data.speaker}</span>
+</div>
+
+<style>
+  .thumbnail {
+    margin-bottom: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .title-description-group {
+    flex-grow: 1;
+    width: 200px;
+  }
+
+  .title {
+    color: rgb(var(--black));
+    font-size: 24px;
+  }
+
+  .description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 20px;
+  }
+
+  .date {
+    color: rgb(var(--gray));
+  }
+
+  .date-speaker-group {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+  }
+
+  .speaker {
+    line-height: 1;
+  }
+</style>

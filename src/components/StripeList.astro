@@ -1,0 +1,42 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Stripe from './Stripe.astro';
+
+interface Props {
+  videoContents: CollectionEntry<'talk' | 'video'>[];
+  showThumbnail: boolean;
+}
+
+const { videoContents, showThumbnail = true } = Astro.props;
+---
+
+<ul class='list'>
+  {
+    videoContents.map((videoContent) => (
+      <li class='stripe'>
+        <Stripe videoContent={videoContent} showThumbnail={showThumbnail} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .stripe {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    border: 1px solid rgb(var(--gray));
+  }
+
+  .stripe:hover {
+    box-shadow: var(--box-shadow);
+  }
+</style>
