@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import StripeList from '../../components/StripeList.astro';
+import ArticleList from '../../components/ArticleList.astro';
 
 const subTitle = SITE_TITLE + ' | videos';
 const subDescription = `${SITE_DESCRIPTION} | videos updated`;
@@ -24,7 +25,7 @@ const videos = (await getCollection('video')).sort(
       </ul>
     </aside>
     <section class='videos-section'>
-      <StripeList videoContents={videos} showThumbnail={false}/>
+      <ArticleList articles={videos} />
     </section>
   </main>
 </Layout>

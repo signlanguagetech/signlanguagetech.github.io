@@ -1,19 +1,19 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import Stripe from './Stripe.astro';
+import Article from './Article.astro';
 
 interface Props {
-  videoContents: CollectionEntry<'talk' | 'video'>[];
+  articles: CollectionEntry<'talk' | 'video'>[];
 }
 
-const { videoContents } = Astro.props;
+const { articles } = Astro.props;
 ---
 
 <ul class='list'>
   {
-    videoContents.map((videoContent) => (
-      <li class='stripe'>
-        <Stripe videoContent={videoContent} />
+    articles.map((article) => (
+      <li class='article'>
+        <Article article={article} />
       </li>
     ))
   }
@@ -26,7 +26,7 @@ const { videoContents } = Astro.props;
     padding: 0;
   }
 
-  .stripe {
+  .article {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -35,7 +35,7 @@ const { videoContents } = Astro.props;
     border: 1px solid rgb(var(--gray));
   }
 
-  .stripe:hover {
+  .article:hover {
     box-shadow: var(--box-shadow);
   }
 </style>

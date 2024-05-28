@@ -4,25 +4,20 @@ import FormattedDate from './FormattedDate.astro';
 
 interface Props {
   videoContent: CollectionEntry<'talk' | 'video'>;
-  showThumbnail: boolean;
 }
 
-const { videoContent, showThumbnail } = Astro.props;
+const { videoContent } = Astro.props;
 ---
 
-{
-  showThumbnail && (
-    <a class='link' href={`/${videoContent.collection}/${videoContent.slug}/`}>
-      <img
-        class='thumbnail'
-        width='200px'
-        height='100px'
-        src={videoContent.data.thumbnail}
-        alt={videoContent.data.alt}
-      />
-    </a>
-  )
-}
+<a class='link' href={`/${videoContent.collection}/${videoContent.slug}/`}>
+  <img
+    class='thumbnail'
+    width='200px'
+    height='100px'
+    src={videoContent.data.thumbnail}
+    alt={videoContent.data.alt}
+  />
+</a>
 <div class='title-description-group'>
   <h4 class='title'>{videoContent.data.title}</h4>
   <div class='description'>{videoContent.data.description}</div>

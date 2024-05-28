@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+  article: CollectionEntry<'talk' | 'video'>;
+}
+
+const { article } = Astro.props;
+---
+
+<div class='title-description-group'>
+  <a class='link' href={`/${article.collection}/${article.slug}/`}>
+    <h4 class='title'>{article.data.title}</h4>
+  </a>
+  <div class='description'>{article.data.description}</div>
+</div>
+<div class='date-speaker-group'>
+  <FormattedDate class:list={['date']} date={article.data.pubDate} />
+  <span class='speaker'>{article.data.speaker}</span>
+</div>
+
+<style>
+  .title-description-group {
+    flex-grow: 1;
+    width: 200px;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .title {
+    color: rgb(var(--black));
+    font-size: 24px;
+  }
+
+  .title:hover {
+    color: rgb(var(--gray));
+  }
+
+  .description {
+    line-height: 20px;
+  }
+
+  .date {
+    color: rgb(var(--gray));
+  }
+
+  .date-speaker-group {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+  }
+
+  .speaker {
+    line-height: 1;
+  }
+</style>
