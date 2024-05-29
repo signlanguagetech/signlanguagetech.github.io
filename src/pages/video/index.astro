@@ -3,8 +3,9 @@ import { getCollection } from 'astro:content';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
-import StripeList from '../../components/StripeList.astro';
 import ArticleList from '../../components/ArticleList.astro';
+import { countTags, getTotalTags } from '../../helpers/video.helper';
+import TagList from '../../components/TagList.astro';
 
 const subTitle = SITE_TITLE + ' | videos';
 const subDescription = `${SITE_DESCRIPTION} | videos updated`;
@@ -12,17 +13,15 @@ const subDescription = `${SITE_DESCRIPTION} | videos updated`;
 const videos = (await getCollection('video')).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const tags = countTags(getTotalTags(videos));
 ---
 
 <Layout title={subTitle} description={subDescription}>
   <main class='main'>
     <aside class='aside'>
       <h3>All videos</h3>
-      <ul>
-        <li>Angular (1)</li>
-        <li>HTML (3)</li>
-        <li>Effect (4)</li>
-      </ul>
+      <TagList tags={tags}/>
     </aside>
     <section class='videos-section'>
       <ArticleList articles={videos} />
@@ -39,4 +38,5 @@ const videos = (await getCollection('video')).sort(
   .videos-section {
     width: 100%;
   }
+
 </style>

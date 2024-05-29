@@ -4,6 +4,9 @@ description: 'That gets us on a hands-on journey into TDD with Angular! peek int
 speaker: 'Flavio Milani'
 pubDate: 'May.22.2024'
 thumbnail: '/talks-photos/implementing-tdd-with-angular-small.webp'
+tags:
+  - Angular
+  - TypeScript
 ---
 
 <iframe 

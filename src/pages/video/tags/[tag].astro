@@ -1,0 +1,65 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+import type { Tag } from '../../../model/model';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
+import Layout from '../../../layouts/Layout.astro';
+import ArticleList from '../../../components/ArticleList.astro';
+import { countTags, getTotalTags } from '../../../helpers/video.helper';
+import TagList from '../../../components/TagList.astro';
+
+export async function getStaticPaths() {
+  const videos = await getCollection('video');
+
+  const tags: string[] = getTotalTags(videos);
+  const tagCounts = countTags(tags);
+
+  return tagCounts.map(({ tag }) => {
+    return {
+      params: { tag },
+      props: {
+        tag,
+        tags: tagCounts,
+        videos: videos.filter((video) =>
+          video.data.tags?.map((t) => t.toLowerCase()).includes(tag)
+        ),
+      },
+    };
+  });
+}
+
+interface Props {
+  tag: string;
+  tags: Tag[];
+  videos: CollectionEntry<'video'>[];
+}
+
+const { tag, tags, videos } = Astro.props;
+
+const subTitle = `${SITE_TITLE} | videos | ${tag}`;
+const subDescription = `${SITE_DESCRIPTION} | videos updated`;
+---
+
+<Layout title={subTitle} description={subDescription}>
+  <main class='main'>
+    <aside class='aside'>
+      <h3>All videos</h3>
+      <TagList tags={tags} currentTag={tag}/>
+    </aside>
+    <section class='videos-section'>
+      <ArticleList articles={videos} />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .main {
+    display: flex;
+    gap: 20px;
+  }
+
+  .videos-section {
+    width: 100%;
+  }
+</style>
