@@ -1,9 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+
+import type { ContentKeys } from '../model/model';
 import FormattedDate from './FormattedDate.astro';
 
 interface Props {
-  videoContent: CollectionEntry<'talk' | 'video'>;
+  videoContent: CollectionEntry<ContentKeys>;
 }
 
 const { videoContent } = Astro.props;

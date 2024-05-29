@@ -6,13 +6,12 @@ import Layout from '../../layouts/Layout.astro';
 import ArticleList from '../../components/ArticleList.astro';
 import { countTags, getTotalTags } from '../../helpers/video.helper';
 import TagList from '../../components/TagList.astro';
+import { sortDate } from '../../helpers/helper';
 
 const subTitle = SITE_TITLE + ' | videos';
 const subDescription = `${SITE_DESCRIPTION} | videos updated`;
 
-const videos = (await getCollection('video')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const videos = (await getCollection('video')).sort(sortDate);
 
 const tags = countTags(getTotalTags(videos));
 ---
@@ -20,8 +19,7 @@ const tags = countTags(getTotalTags(videos));
 <Layout title={subTitle} description={subDescription}>
   <main class='main'>
     <aside class='aside'>
-      <h3>All videos</h3>
-      <TagList tags={tags}/>
+      <TagList tags={tags} />
     </aside>
     <section class='videos-section'>
       <ArticleList articles={videos} />
@@ -35,8 +33,11 @@ const tags = countTags(getTotalTags(videos));
     gap: 20px;
   }
 
+  .aside {
+    width: 20%;
+  }
+
   .videos-section {
     width: 100%;
   }
-
 </style>

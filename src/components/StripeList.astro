@@ -1,9 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+
+import type { ContentKeys } from '../model/model';
 import Stripe from './Stripe.astro';
 
 interface Props {
-  videoContents: CollectionEntry<'talk' | 'video'>[];
+  videoContents: CollectionEntry<ContentKeys>[];
 }
 
 const { videoContents } = Astro.props;

@@ -8,9 +8,10 @@ import Layout from '../../../layouts/Layout.astro';
 import ArticleList from '../../../components/ArticleList.astro';
 import { countTags, getTotalTags } from '../../../helpers/video.helper';
 import TagList from '../../../components/TagList.astro';
+import { sortDate } from '../../../helpers/helper';
 
 export async function getStaticPaths() {
-  const videos = await getCollection('video');
+  const videos = (await getCollection('video')).sort(sortDate);
 
   const tags: string[] = getTotalTags(videos);
   const tagCounts = countTags(tags);
@@ -44,8 +45,7 @@ const subDescription = `${SITE_DESCRIPTION} | videos updated`;
 <Layout title={subTitle} description={subDescription}>
   <main class='main'>
     <aside class='aside'>
-      <h3>All videos</h3>
-      <TagList tags={tags} currentTag={tag}/>
+      <TagList tags={tags} currentTag={tag} />
     </aside>
     <section class='videos-section'>
       <ArticleList articles={videos} />
@@ -59,6 +59,10 @@ const subDescription = `${SITE_DESCRIPTION} | videos updated`;
     gap: 20px;
   }
 
+  .aside {
+    width: 20%;
+  }
+  
   .videos-section {
     width: 100%;
   }

@@ -1,9 +1,11 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+
+import type { ContentKeys } from '../model/model';
 import Article from './Article.astro';
 
 interface Props {
-  articles: CollectionEntry<'talk' | 'video'>[];
+  articles: CollectionEntry<ContentKeys>[];
 }
 
 const { articles } = Astro.props;
