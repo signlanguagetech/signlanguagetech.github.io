@@ -1,0 +1,39 @@
+---
+import type { Tag } from '../model/model';
+
+interface Props {
+  tags: Tag[];
+  currentTag?: string;
+}
+
+const { tags, currentTag } = Astro.props;
+---
+
+<ul class='tag-list'>
+  {
+    tags.map((t) => (
+      <li>
+        <a
+          class:list={['tag-link', { active: currentTag === t.tag }]}
+          href={`/video/tags/${t.tag}`}
+        >
+          {t.tag} - ({t.count})
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .active {
+    color: rgba(var(--gray-light));
+  }
+
+  .tag-list {
+    list-style-type: none;
+  }
+
+  .tag-link {
+    text-decoration: none;
+  }
+</style>
