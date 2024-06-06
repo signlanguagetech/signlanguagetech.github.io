@@ -4,29 +4,25 @@ import YoututbeIcon from './icons/YoutubeIcon.astro';
 import TwitterIcon from './icons/TwitterIcon.astro';
 import GitHubIcon from './icons/GitHubIcon.astro';
 import SltIcon from './icons/SltIcon.astro';
-
-const maxMobileWidth = 720;
 ---
 
 <header
-  x-data={`{ xOpenMenu: ${false}, width: 1920 }`}
+  class='header'
+  x-data={`{ showMenu: ${false}, width: 1920 }`}
   x-init='width = window.innerWidth'
   x-on:resize.window='width = window.innerWidth'
 >
-  <nav>
+  <nav class='nav'>
     <h2 class='sub-header'>
-      <a class='slt-link' href='/'>
+      <a class='nav-link slt-link' href='/'>
         <SltIcon height='32px' width='32px' />
-        <span id='sltText' class='slt-text'>Sign Language Tech</span>
+        <span class='slt-text'>Sign Language Tech</span>
       </a>
-      <div class='menu-icon' @click='xOpenMenu = !xOpenMenu'>
-        <span x-text="xOpenMenu ? 'X' : '=' "></span>
+      <div class='menu-icon' @click='showMenu = !showMenu'>
+        <span x-text="showMenu ? 'X' : '=' "></span>
       </div>
     </h2>
-    <div
-      :class=`(width < ${maxMobileWidth}) && !xOpenMenu && 'hidden'`
-      class='tabs'
-    >
+    <div :class="(width < 720) && !showMenu && 'hidden'" class='tabs'>
       <div class='valami'>
         <HeaderLink href='/video'>Videos</HeaderLink>
         <HeaderLink href='/talk'>Talks</HeaderLink>
@@ -51,13 +47,18 @@ const maxMobileWidth = 720;
 </header>
 
 <style>
-  header {
+  .header {
     margin: 0;
     padding: 0 1em;
     background: white;
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
     display: flex;
     justify-content: center;
+  }
+
+  .sub-header {
+    margin: 0;
+    font-size: 1em;
   }
 
   .slt-link {
@@ -69,29 +70,25 @@ const maxMobileWidth = 720;
     padding: 0 10px;
   }
 
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
-
   .hidden {
     display: none;
   }
 
-  nav {
+  .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 1200px;
   }
 
-  nav a {
+  .nav a {
     padding: 1em 0.5em;
     color: var(--black);
     border-bottom: 4px solid transparent;
-    text-decoration: none;
+    text-decoration: none !important;
   }
-  nav a.active {
+
+  .nav a.active {
     text-decoration: none;
     border-bottom-color: var(--accent);
   }
@@ -107,6 +104,8 @@ const maxMobileWidth = 720;
 
   @media (max-width: 720px) {
     .sub-header {
+      margin: 0;
+      font-size: 1em;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -135,7 +134,7 @@ const maxMobileWidth = 720;
       align-items: center;
     }
 
-    nav a.active {
+    .nav-link.active {
       border-bottom-color: white;
     }
 
