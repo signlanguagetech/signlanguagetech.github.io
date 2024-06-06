@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
 import VideoPost from '../../layouts/VideoPost.astro';
+import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const talks = await getCollection('talk');
@@ -15,6 +16,8 @@ const talk = Astro.props;
 const { Content } = await talk.render();
 ---
 
-<VideoPost {...talk.data}>
-  <Content />
-</VideoPost>
+<Layout title={talk.data.title} description={talk.data.description}>
+  <VideoPost {...talk.data}>
+    <Content />
+  </VideoPost>
+</Layout>
