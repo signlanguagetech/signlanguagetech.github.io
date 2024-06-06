@@ -1,16 +1,18 @@
 import { defineConfig } from "astro/config";
 import mdx from '@astrojs/mdx';
-
 import sitemap from '@astrojs/sitemap';
-
-const port = 4300
-const localHostUrl = `http://localhost:${port}`
-const liveUrl = 'https://signlanguagetech.github.io'
+import alpinejs from "@astrojs/alpinejs";
+const port = 4300;
+const localHostUrl = `http://localhost:${port}`;
+const liveUrl = 'https://signlanguagetech.github.io';
 const isProd = import.meta.env.PROD;
+
 
 // https://astro.build/config
 export default defineConfig({
-  server: { port },
+  server: {
+    port
+  },
   site: isProd ? liveUrl : localHostUrl,
-  integrations: [mdx(), sitemap()]
+  integrations: [mdx(), sitemap(), alpinejs()]
 });
