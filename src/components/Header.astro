@@ -3,12 +3,21 @@ import HeaderLink from './HeaderLink.astro';
 import YoututbeIcon from './icons/YoutubeIcon.astro';
 import TwitterIcon from './icons/TwitterIcon.astro';
 import GitHubIcon from './icons/GitHubIcon.astro';
+import MenuNavigationIcon from './icons/MenuNavigationIcon.astro';
+import CrossIcon from './icons/CrossIcon.astro';
 import SltIcon from './icons/SltIcon.astro';
 ---
 
 <header
   class='header'
-  x-data={`{ showMenu: ${false}, width: 1920 }`}
+  x-data=`{
+      toggle() { 
+        this.isOpen = !this.isOpen;
+        document.body.style.overflow = this.isOpen ? "hidden" : "";
+      },
+      isOpen: false, 
+      width: 1920 
+    }`
   x-init='width = window.innerWidth'
   x-on:resize.window='width = window.innerWidth'
 >
@@ -18,12 +27,15 @@ import SltIcon from './icons/SltIcon.astro';
         <SltIcon height='32px' width='32px' />
         <span class='slt-text'>Sign Language Tech</span>
       </a>
-      <div class='menu-icon' @click='showMenu = !showMenu'>
-        <span x-text="showMenu ? 'X' : '=' "></span>
+      <div class='menu-icon' @click='toggle'>
+        <span x-show='!isOpen'
+          ><MenuNavigationIcon height='32px' width='32px' /></span
+        >
+        <span x-show='isOpen'><CrossIcon height='32px' width='32px' /></span>
       </div>
     </h2>
-    <div :class="(width < 720) && !showMenu && 'hidden'" class='tabs'>
-      <div class='valami'>
+    <div :class="(width < 720) && !isOpen && 'hidden'" class='tabs-group'>
+      <div class='tabs'>
         <HeaderLink href='/video'>Videos</HeaderLink>
         <HeaderLink href='/talk'>Talks</HeaderLink>
         <HeaderLink href='/about'>About</HeaderLink>
@@ -117,24 +129,23 @@ import SltIcon from './icons/SltIcon.astro';
       display: none;
     }
 
-    .tabs {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    .tabs-group {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
       color: white;
       background-color: rgba(9, 9, 11, 0.9);
       top: 70px;
-      right: 0;
-      z-index: 1;
+      left: 0;
     }
 
-    .valami {
+    .tabs {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    .nav-link.active {
+    .nav a.active {
       border-bottom-color: white;
     }
 
