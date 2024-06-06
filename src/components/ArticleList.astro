@@ -5,7 +5,7 @@ import type { ContentKeys } from '../model/model';
 import Article from './Article.astro';
 
 interface Props {
-  articles: CollectionEntry<ContentKeys>[];
+  readonly articles: readonly CollectionEntry<ContentKeys>[];
 }
 
 const { articles } = Astro.props;

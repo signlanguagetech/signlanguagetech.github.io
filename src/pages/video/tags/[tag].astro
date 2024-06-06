@@ -9,6 +9,7 @@ import ArticleList from '../../../components/ArticleList.astro';
 import { countTags, getTotalTags } from '../../../helpers/video.helper';
 import TagList from '../../../components/TagList.astro';
 import { sortDate } from '../../../helpers/helper';
+import VideoMain from '../../../layouts/VideoMain.astro';
 
 export async function getStaticPaths() {
   const videos = (await getCollection('video')).sort(sortDate);
@@ -43,27 +44,5 @@ const subDescription = `${SITE_DESCRIPTION} | videos updated`;
 ---
 
 <Layout title={subTitle} description={subDescription}>
-  <main class='main'>
-    <aside class='aside'>
-      <TagList tags={tags} currentTag={tag} />
-    </aside>
-    <section class='videos-section'>
-      <ArticleList articles={videos} />
-    </section>
-  </main>
+  <VideoMain tags={tags} currentTag={tag} articles={videos} />
 </Layout>
-
-<style>
-  .main {
-    display: flex;
-    gap: 20px;
-  }
-
-  .aside {
-    width: 20%;
-  }
-  
-  .videos-section {
-    width: 100%;
-  }
-</style>

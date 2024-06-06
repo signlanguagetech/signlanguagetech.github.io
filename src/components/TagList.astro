@@ -7,37 +7,48 @@ interface Props {
 }
 
 const { tags, currentTag } = Astro.props;
-
-console.log(currentTag);
 ---
 
-<ul class='tag-list'>
+<div class='tag-list'>
   {
     tags.map((t) => (
-      <li>
-        <a
-          class:list={['tag-link', { active: currentTag === t.tag }]}
-          href={`/video/tags/${t.tag}`}
-        >
+      <div class:list={['chip', { active: currentTag === t.tag }]}>
+        <a class='tag-link' href={`/video/tags/${t.tag}`}>
           {t.tag} ({t.count})
         </a>
-      </li>
+      </div>
     ))
   }
-</ul>
+</div>
 
 <style>
+  .tag-list {
+    display: flex;
+    padding-left: 0;
+    gap: 5px;
+    font-size: 16px;
+  }
+
+  .chip {
+    background-color: rgb(var(--gray-dark));
+    opacity: 0.5;
+    padding: 5px 10px;
+    border-radius: 50px;
+  }
+
+  .chip a {
+    color: var(--white);
+  }
+
+  .chip:hover {
+    opacity: 0.7;
+  }
   .tag-link {
     text-decoration: none;
     color: black;
   }
   .active {
-    color: rgba(var(--gray-light));
-  }
-
-  .tag-list {
-    list-style-type: none;
-    padding-left: 0;
+    opacity: 1;
   }
 
   .tag-link:hover {

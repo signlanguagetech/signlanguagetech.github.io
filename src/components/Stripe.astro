@@ -11,7 +11,7 @@ interface Props {
 const { videoContent } = Astro.props;
 ---
 
-<a class='link' href={`/${videoContent.collection}/${videoContent.slug}/`}>
+<div>
   <img
     class='thumbnail'
     width='200px'
@@ -19,9 +19,11 @@ const { videoContent } = Astro.props;
     src={videoContent.data.thumbnail}
     alt={videoContent.data.alt}
   />
-</a>
+</div>
 <div class='title-description-group'>
-  <h4 class='title'>{videoContent.data.title}</h4>
+  <a class='link' href={`/${videoContent.collection}/${videoContent.slug}/`}>
+    <h4 class='title'>{videoContent.data.title}</h4>
+  </a>
   <div class='description'>{videoContent.data.description}</div>
 </div>
 <div class='date-speaker-group'>
@@ -45,6 +47,14 @@ const { videoContent } = Astro.props;
     font-size: 24px;
   }
 
+  .title:hover {
+    color: rgb(var(--gray));
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
   .description {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -65,5 +75,14 @@ const { videoContent } = Astro.props;
 
   .speaker {
     line-height: 1;
+  }
+
+  @media (max-width: 720px) {
+    .thumbnail {
+      display: none;
+    }
+    .title {
+      font-size: 22px;
+    }
   }
 </style>

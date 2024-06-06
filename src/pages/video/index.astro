@@ -3,41 +3,17 @@ import { getCollection } from 'astro:content';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
-import ArticleList from '../../components/ArticleList.astro';
 import { countTags, getTotalTags } from '../../helpers/video.helper';
-import TagList from '../../components/TagList.astro';
 import { sortDate } from '../../helpers/helper';
+import VideoMain from '../../layouts/VideoMain.astro';
 
 const subTitle = SITE_TITLE + ' | videos';
 const subDescription = `${SITE_DESCRIPTION} | videos updated`;
 
 const videos = (await getCollection('video')).sort(sortDate);
-
 const tags = countTags(getTotalTags(videos));
 ---
 
-<Layout title={subTitle} description={subDescription}>
-  <main class='main'>
-    <aside class='aside'>
-      <TagList tags={tags} />
-    </aside>
-    <section class='videos-section'>
-      <ArticleList articles={videos} />
-    </section>
-  </main>
-</Layout>
-
-<style>
-  .main {
-    display: flex;
-    gap: 20px;
-  }
-
-  .aside {
-    width: 20%;
-  }
-
-  .videos-section {
-    width: 100%;
-  }
-</style>
+  <Layout title={subTitle} description={subDescription}>
+    <VideoMain tags={tags} articles={videos} />
+  </Layout>

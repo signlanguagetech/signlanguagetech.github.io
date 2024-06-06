@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ArticleList from '../components/ArticleList.astro';
+import TagList from '../components/TagList.astro';
+import type { Tag } from '../model/model';
+
+interface Props {
+  readonly tags: Tag[];
+  readonly articles: readonly CollectionEntry<'video'>[];
+  readonly currentTag?: string;
+}
+
+const { tags, articles, currentTag } = Astro.props;
+---
+
+<main class='main'>
+  <div class='tag-chips'>
+    <TagList tags={tags} currentTag={currentTag} />
+  </div>
+  <section class='videos-section'>
+    <ArticleList articles={articles} />
+  </section>
+</main>
+
+<style>
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+</style>
