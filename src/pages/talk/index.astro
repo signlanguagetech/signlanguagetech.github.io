@@ -4,10 +4,9 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import StripeList from '../../components/StripeList.astro';
 import Layout from '../../layouts/Layout.astro';
+import { sortDate } from '../../helpers/helper';
 
-const talks = (await getCollection('talk')).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const talks = (await getCollection('talk')).sort(sortDate);
 
 const subTitle = SITE_TITLE + ' | inspring talks';
 const subDescription = `${SITE_DESCRIPTION} | talks`;
