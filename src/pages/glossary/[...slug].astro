@@ -3,6 +3,8 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import { sortDate } from '../../helpers/helper';
+import GlossaryTitleList from '../../components/GlossaryTitleList.astro';
+import YtShort from '../../components/YtShort.astro';
 
 const subTitle = SITE_TITLE + ' | glossary';
 const subDescription = `${SITE_DESCRIPTION} | glossary`;
@@ -25,29 +27,17 @@ const glossaries = (await getCollection('glossary')).sort(sortDate);
 <Layout title={subTitle} description={subDescription}>
   <main class='main'>
     <div class='aside-left'>
-      <ul>
-        {
-          glossaries.map((glossary) => (
-            <li>
-              <a href={`/glossary/${glossary.slug}`}> {glossary.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <GlossaryTitleList glossaries={glossaries} />
     </div>
     <section class='section'>
       <Content />
     </section>
     <aside class='aside-right'>
-      <iframe
-        width='220'
-        height='392'
-        class='yt-shorts-frame'
-        src={glossary.data.ytShortEmbeddedLink}
-        frameborder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        referrerpolicy='strict-origin-when-cross-origin'
-        allowfullscreen></iframe>
+      <h4>How to Sign</h4>
+      { 
+        glossary.data.ytShortEmbeddedLink &&
+          <YtShort link={glossary.data.ytShortEmbeddedLink} />
+      }
     </aside>
   </main>
 </Layout>
@@ -58,30 +48,12 @@ const glossaries = (await getCollection('glossary')).sort(sortDate);
     gap: 40px;
   }
 
-  .yt-shorts-frame {
-    border-radius: 10px;
-  }
-
   .aside-right {
     width: 220px;
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   .section {
     width: 700px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: var(--accent);
   }
 
   @media (max-width: 720px) {

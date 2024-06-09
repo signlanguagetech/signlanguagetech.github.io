@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import { sortDate } from '../../helpers/helper';
+import GlossaryTitleList from '../../components/GlossaryTitleList.astro';
 
 const subTitle = SITE_TITLE + ' | glossary';
 const subDescription = `${SITE_DESCRIPTION} | glossary`;
@@ -13,15 +14,7 @@ const glossaries = (await getCollection('glossary')).sort(sortDate);
 <Layout title={subTitle} description={subDescription}>
   <main class='main'>
     <div class='aside-left'>
-      <ul>
-        {
-          glossaries.map((glossary) => (
-            <li>
-              <a href={`glossary/${glossary.slug}`}> {glossary.data.title}</a>
-            </li>
-          ))
-        }
-      </ul>
+      <GlossaryTitleList glossaries={glossaries}/>
     </div>
     <section class='section'>
       <h1>Sign Language Tech</h1>
@@ -45,22 +38,8 @@ const glossaries = (await getCollection('glossary')).sort(sortDate);
     width: 220;
   }
 
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
   .section {
     width: 700px;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: var(--accent);
   }
 
   @media (max-width: 720px) {

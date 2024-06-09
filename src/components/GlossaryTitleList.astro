@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  glossaries: CollectionEntry<'glossary'>[];
+}
+
+const { glossaries } = Astro.props;
+---
+
+<ul class='list'>
+  {
+    glossaries.map((glossary) => (
+      <li>
+        <a class='glossary-link' href={`/glossary/${glossary.slug}`}>
+          {glossary.data.title}
+        </a>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .glossary-link {
+    text-decoration: none;
+  }
+</style>

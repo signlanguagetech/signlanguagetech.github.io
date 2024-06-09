@@ -85,11 +85,11 @@ b {
 }
 
 a {
-  color: var(--accent);
+  color: rgb(var(--black));
 }
 
 a:hover {
-  color: var(--accent);
+  color: rgb(var(--gray));
 }
 
 p {

@@ -1,0 +1,23 @@
+---
+interface Props {
+  link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<iframe
+  width='220'
+  height='392'
+  class='yt-shorts-frame'
+  src={link}
+  frameborder='0'
+  allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+  referrerpolicy='strict-origin-when-cross-origin'
+  allowfullscreen></iframe>
+
+<style>
+  .yt-shorts-frame {
+    border-radius: 10px;
+  }
+</style>
