@@ -1,50 +1,38 @@
 ---
 import { getCollection } from 'astro:content';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
-import { sortDate } from '../../helpers/helper';
-import GlossaryTitleList from '../../components/GlossaryTitleList.astro';
+import { first, sortDate } from '../../helpers/helper';
+import GlossaryMain from '../../layouts/GlossaryMain.astro';
+import GlossaryContent from '../../layouts/GlossaryContent.astro';
 
 const subTitle = SITE_TITLE + ' | glossary';
 const subDescription = `${SITE_DESCRIPTION} | glossary`;
 
+export async function getStaticPath() {
+  const glossary = first(await getCollection('glossary'));
+  console.log({ glossary });
+  return {
+    props: glossary,
+  };
+}
+
+// const glossary = Astro.props;
 const glossaries = (await getCollection('glossary')).sort(sortDate);
+const glossary = first(glossaries);
+const { Content } = await glossary!.render();
+console.log(glossary?.data.title);
 ---
 
 <Layout title={subTitle} description={subDescription}>
-  <main class='main'>
-    <div class='aside-left'>
-      <GlossaryTitleList glossaries={glossaries}/>
-    </div>
-    <section class='section'>
-      <h1>Sign Language Tech</h1>
-      <p>tbd</p>
-    </section>
-    <aside class='aside-right'></aside>
-  </main>
+  <GlossaryMain
+    glossaries={glossaries}
+    link={glossary?.data.ytShortEmbeddedLink}
+    currentSlug={glossary?.slug}
+  >
+    <GlossaryContent>
+      <Content />
+    </GlossaryContent>
+  </GlossaryMain>
 </Layout>
-
-<style>
-  .main {
-    display: flex;
-    gap: 40px;
-  }
-
-  .yt-shorts-frame {
-    border-radius: 10px;
-  }
-
-  .aside-right {
-    width: 220;
-  }
-
-  .section {
-    width: 700px;
-  }
-
-  @media (max-width: 720px) {
-    .main {
-      flex-direction: column;
-    }
-  }
-</style>

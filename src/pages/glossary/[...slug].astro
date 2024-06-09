@@ -1,10 +1,13 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
+
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import { sortDate } from '../../helpers/helper';
-import GlossaryTitleList from '../../components/GlossaryTitleList.astro';
-import YtShort from '../../components/YtShort.astro';
+import GlossaryMain from '../../layouts/GlossaryMain.astro';
+import GlossaryContent from '../../layouts/GlossaryContent.astro';
+
+type Props = CollectionEntry<'glossary'>;
 
 const subTitle = SITE_TITLE + ' | glossary';
 const subDescription = `${SITE_DESCRIPTION} | glossary`;
@@ -16,49 +19,20 @@ export async function getStaticPaths() {
     props: glossary,
   }));
 }
-type Props = CollectionEntry<'glossary'>;
 
 const glossary = Astro.props;
-const { Content } = await glossary.render();
-
 const glossaries = (await getCollection('glossary')).sort(sortDate);
+const { Content } = await glossary.render();
 ---
 
 <Layout title={subTitle} description={subDescription}>
-  <main class='main'>
-    <div class='aside-left'>
-      <GlossaryTitleList glossaries={glossaries} />
-    </div>
-    <section class='section'>
+  <GlossaryMain
+    glossaries={glossaries}
+    link={glossary.data.ytShortEmbeddedLink}
+    currentSlug={glossary?.slug}
+  >
+    <GlossaryContent>
       <Content />
-    </section>
-    <aside class='aside-right'>
-      <h4>How to Sign</h4>
-      { 
-        glossary.data.ytShortEmbeddedLink &&
-          <YtShort link={glossary.data.ytShortEmbeddedLink} />
-      }
-    </aside>
-  </main>
+    </GlossaryContent>
+  </GlossaryMain>
 </Layout>
-
-<style>
-  .main {
-    display: flex;
-    gap: 40px;
-  }
-
-  .aside-right {
-    width: 220px;
-  }
-
-  .section {
-    width: 700px;
-  }
-
-  @media (max-width: 720px) {
-    .main {
-      flex-direction: column;
-    }
-  }
-</style>

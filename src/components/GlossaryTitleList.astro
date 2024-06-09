@@ -3,15 +3,21 @@ import type { CollectionEntry } from 'astro:content';
 
 interface Props {
   glossaries: CollectionEntry<'glossary'>[];
+  currentSlug?: string;
 }
 
-const { glossaries } = Astro.props;
+const { glossaries, currentSlug } = Astro.props;
 ---
 
 <ul class='list'>
   {
     glossaries.map((glossary) => (
-      <li>
+      <li
+        class:list={[
+          'glossary-title',
+          { active: glossary.slug === currentSlug },
+        ]}
+      >
         <a class='glossary-link' href={`/glossary/${glossary.slug}`}>
           {glossary.data.title}
         </a>
@@ -22,12 +28,33 @@ const { glossaries } = Astro.props;
 
 <style>
   .list {
+    font-size: 16px;
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
 
+  .glossary-title {
+    margin: 5px 0;
+  }
+
+  .glossary-title:hover {
+    background: var(--white);
+    padding-left: 5px;
+    border-left: 3px rgb(var(--black)) solid;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .glossary-title.active {
+    background: var(--white);
+    padding-left: 5px;
+    border-left: 3px rgb(var(--gray-light)) solid;
+    border-radius: 4px 0 0 4px;
+  }
+
   .glossary-link {
     text-decoration: none;
+    display: block;
+    width: 100%;
   }
 </style>
