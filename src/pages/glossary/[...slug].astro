@@ -1,0 +1,92 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import Layout from '../../layouts/Layout.astro';
+import { sortDate } from '../../helpers/helper';
+
+const subTitle = SITE_TITLE + ' | glossary';
+const subDescription = `${SITE_DESCRIPTION} | glossary`;
+
+export async function getStaticPaths() {
+  const glossaries = await getCollection('glossary');
+  return glossaries.map((glossary) => ({
+    params: { slug: glossary.slug },
+    props: glossary,
+  }));
+}
+type Props = CollectionEntry<'glossary'>;
+
+const glossary = Astro.props;
+const { Content } = await glossary.render();
+
+const glossaries = (await getCollection('glossary')).sort(sortDate);
+---
+
+<Layout title={subTitle} description={subDescription}>
+  <main class='main'>
+    <div class='aside-left'>
+      <ul>
+        {
+          glossaries.map((glossary) => (
+            <li>
+              <a href={`/glossary/${glossary.slug}`}> {glossary.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <section class='section'>
+      <Content />
+    </section>
+    <aside class='aside-right'>
+      <iframe
+        width='220'
+        height='392'
+        class='yt-shorts-frame'
+        src={glossary.data.ytShortEmbeddedLink}
+        frameborder='0'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        referrerpolicy='strict-origin-when-cross-origin'
+        allowfullscreen></iframe>
+    </aside>
+  </main>
+</Layout>
+
+<style>
+  .main {
+    display: flex;
+    gap: 40px;
+  }
+
+  .yt-shorts-frame {
+    border-radius: 10px;
+  }
+
+  .aside-right {
+    width: 220px;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .section {
+    width: 700px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 720px) {
+    .main {
+      flex-direction: column;
+    }
+  }
+</style>
