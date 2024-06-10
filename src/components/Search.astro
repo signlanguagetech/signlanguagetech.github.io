@@ -1,0 +1,19 @@
+---
+import '@docsearch/css';
+---
+
+<div id='search'></div>
+
+<script>
+  import docsearch from '@docsearch/js';
+
+  const apiKey = import.meta.env.PUBLIC_API_KEY;
+  const appId = import.meta.env.PUBLIC_APP_ID;
+
+  docsearch({
+    container: '#search',
+    appId,
+    indexName: 'signlanguagetechio',
+    apiKey,
+  });
+</script>
