@@ -18,30 +18,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
-        uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v2
-        env:
-          PUBLIC_APP_ID: ${{ secrets.PUBLIC_APP_ID }}
-          PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
-        with:
-          # path: . # The root location of your Astro project inside the repository. (optional)
-          # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
-          package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
+      # - name: Checkout your repository using git
+      #   uses: actions/checkout@v4
+      # - name: Install, build, and upload your site
+      #   uses: withastro/action@v2
+      #   env:
+      #     PUBLIC_APP_ID: ${{ secrets.PUBLIC_APP_ID }}
+      #     PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
+      #   with:
+      #     # path: . # The root location of your Astro project inside the repository. (optional)
+      #     # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
+      #     package-manager: pnpm@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
       - name: Debug
         env:
           PUBLIC_APP_ID: ${{ secrets.PUBLIC_APP_ID }}
           PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
-        run: echo "$PUBLIC_APP_ID"
+        run: echo "$PUBLIC_API_KEY"
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ vars.GITHUB_PAGE_URL }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  # deploy:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ vars.GITHUB_PAGE_URL }}
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
