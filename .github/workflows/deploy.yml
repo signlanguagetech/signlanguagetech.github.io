@@ -33,8 +33,9 @@ jobs:
         env:
           PUBLIC_APP_ID: ${{ secrets.PUBLIC_APP_ID }}
           PUBLIC_API_KEY: ${{ secrets.PUBLIC_API_KEY }}
+          URL: ${{ vars.GITHUB_PAGE_URL }}
         run: |
-          echo "$PUBLIC_API_KEY"
+          echo "$URL"
 
   # deploy:
   #   needs: build
