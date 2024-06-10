@@ -178,6 +178,11 @@ hr {
   height: 550px;
 }
 
+.glossary-yt-frame {
+  width: 100%;
+  height: 360px;
+}
+
 @media (max-width: 720px) {
   .youtube-frame {
     height: 215px;

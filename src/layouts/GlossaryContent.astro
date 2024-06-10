@@ -3,11 +3,17 @@
 ---
 
 <section class='section'>
-  <slot >
-</section>
+  <slot />
 
-<style>
-  .section {
-    width: 700px;
-  }
-</style>
+  <style>
+    .section {
+      width: 700px;
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        width: unset;
+      }
+    }
+  </style>
+</section>

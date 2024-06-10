@@ -22,6 +22,6 @@ Effect.andThen(Effect.succeed(1), (n) => n + 1);
 
 This `dual` function in Effect is particularly useful in a static-typed language like TypeScript where defining function types enhance code reliability. By providing various function signatures, this function can have different ways without having to create multiple functions for each specialized case. here video:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K30lWUYluI4?si=wNqkI2t_SjuYB_bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe class="glossary-yt-frame" src="https://www.youtube.com/embed/K30lWUYluI4?si=wNqkI2t_SjuYB_bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 [read more](https://effect.website/docs/guides/style/dual)
