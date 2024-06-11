@@ -13,21 +13,26 @@ const description = `I am Milad as an experienced Software Engineer with over 9
 
 <Layout title={title} description={description}>
   <main>
-    <h2>Established, December 2020</h2>
+    <h2>Bridging the gap: web development in sign language</h2>
 
-    <p>
-      Hey there! I am Milad as an experienced Software Engineer with over 9
-      years in web services, I've been working on countless projects, each
-      presenting its unique potentials and challenges. Every challenge overcome
-      has enriched my knowledge base and fine-tuned my expertise. My journey
-      thus far has fueled my desire to share my accumulated wealth of knowledge,
-      and that's why this Sign Language Tech was born into here.
-    </p>
+    <div class='profile'>
+      <img class='profile-photo' src='./public/slt-my-profile-light.webp' />
+      <p class='mb-2'>
+        Hey there! I am Milad as an experienced Software Engineer with over 9
+        years in web services, I've been working on countless projects, each
+        presenting its unique potentials and challenges. Every challenge
+        overcome has enriched my knowledge base and fine-tuned my expertise. My
+        journey thus far has fueled my desire to share my accumulated wealth of
+        knowledge, and that's why this Sign Language Tech was born into here.
+      </p>
+    </div>
 
-    <p>
-      But why? well, Here, you'll find extensive, professional, and
-      comprehensive discussions on web development, delivered in a captivating
-      and user-friendly manner with International/American Sign Language. Beyond
+    <h3>Why Sign Language Tech?</h3>
+
+    <p class='mb-2'>
+      Well, Here, you'll find extensive, professional, and comprehensive
+      discussions on web development, delivered in a captivating and
+      user-friendly manner with International/American Sign Language. Beyond
       coding and software language, I want to bridge the communication gap and
       make this intriguing world of web development accessible to the deaf
       community. An important part of my mission is to bring on-board deaf
@@ -38,7 +43,9 @@ const description = `I am Milad as an experienced Software Engineer with over 9
       field.
     </p>
 
-    <p>
+    <h3>Interactive Learning Opportunities</h3>
+
+    <p class='mb-2'>
       However, this is not only about tutorials and interviews. I also plan to
       organize interactive events where experts can offer presentations and
       productive workshops. This will not only provide an opportunity for you to
@@ -50,3 +57,36 @@ const description = `I am Milad as an experienced Software Engineer with over 9
     </p>
   </main>
 </Layout>
+
+<style>
+  .profile {
+    display: flex;
+    /* align-items: center; */
+  }
+
+  .profile p {
+    padding-left: 40px;
+  }
+
+  .profile-photo {
+    height: 200px;
+    width: 200px;
+    padding: 1em;
+  }
+
+  @media (max-width: 720px) {
+    .profile {
+      flex-direction: column;
+      /* align-items: left; */
+    }
+
+    .profile p {
+      padding-left: 0;
+    }
+
+    .profile-photo {
+      height: 100px;
+      width: 100px;
+    }
+  }
+</style>
