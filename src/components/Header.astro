@@ -29,9 +29,9 @@ import Search from './Search.astro';
         <span class='slt-text'>Sign Language Tech</span>
       </a>
       <div class='menu-icon' @click='toggle'>
-        <span x-show='!isOpen'
-          ><MenuNavigationIcon height='32px' width='32px' /></span
-        >
+        <span x-show='!isOpen'>
+          <MenuNavigationIcon height='32px' width='32px' />
+        </span>
         <span x-show='isOpen'><CrossIcon height='32px' width='32px' /></span>
       </div>
     </h2>
@@ -140,6 +140,7 @@ import Search from './Search.astro';
       background-color: rgba(9, 9, 11, 0.9);
       top: 70px;
       left: 0;
+      z-index: 100;
     }
 
     .tabs {
