@@ -8,3 +8,6 @@ export const sortDate = <T extends CollectionEntry<ContentKeys>>(a: T, b: T) =>
 export const first = <T>(collections: T[]): T | undefined => {
   return collections.length === 0? undefined : collections[0];
 }
+
+export const capitalizeFirstLetter = (str: string) => 
+  str.charAt(0).toUpperCase() + str.slice(1);
