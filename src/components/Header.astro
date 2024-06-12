@@ -28,13 +28,14 @@ import Search from './Search.astro';
         <SltIcon height='32px' width='32px' />
         <span class='slt-text'>Sign Language Tech</span>
       </a>
-      <div class='menu-icon' @click='toggle'>
-        <span x-show='!isOpen'>
-          <MenuNavigationIcon height='32px' width='32px' />
-        </span>
-        <span x-show='isOpen'><CrossIcon height='32px' width='32px' /></span>
-      </div>
     </h2>
+    <Search />
+    <div class='menu-icon' @click='toggle'>
+      <span x-show='!isOpen'>
+        <MenuNavigationIcon height='32px' width='32px' />
+      </span>
+      <span x-show='isOpen'><CrossIcon height='32px' width='32px' /></span>
+    </div>
     <div :class="(width < 720) && !isOpen && 'hidden'" class='tabs-group'>
       <div class='tabs'>
         <HeaderLink href='/video'>Videos</HeaderLink>
@@ -43,7 +44,6 @@ import Search from './Search.astro';
         <HeaderLink href='/about'>About</HeaderLink>
       </div>
     </div>
-    <Search />
     <div class='social-links'>
       <a href='https://www.youtube.com/@SignLanguageTech' target='_blank'>
         <span class='sr-only'>Sign Language Tech YouTube</span>
@@ -110,6 +110,8 @@ import Search from './Search.astro';
 
   .menu-icon {
     display: none;
+    padding-top: 10px;
+    margin-left: 10px;
   }
 
   .social-links,
@@ -119,11 +121,6 @@ import Search from './Search.astro';
 
   @media (max-width: 720px) {
     .sub-header {
-      margin: 0;
-      font-size: 1em;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       width: 100%;
       z-index: 10;
     }
