@@ -12,14 +12,27 @@ const videos = await getCollection('video');
 const latestVideos = [...talks, ...videos].sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-
 ---
 
 <Layout title={subTitle} description={subDescription}>
   <main>
-    <h1>Latest</h1>
+    <h1 class='main-title'>
+      Empowering the Deaf Community through Technology and Innovation
+    </h1>
+    <p class='mb-2'>
+      Sign Language Tech helps upskill your skill, expand your knowledge, and
+      empowers the deaf and hard of hearing community.
+    </p>
+
+    <p>check out the latest videos:</p>
     <section>
       <StripeList videoContents={latestVideos} />
     </section>
   </main>
 </Layout>
+
+<style>
+  .main-title {
+    font-size: 28px;
+  }
+</style>
