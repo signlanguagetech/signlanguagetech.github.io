@@ -1,60 +1,107 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import AlignLeftIcon from './icons/AlignLeftIcon.astro';
 
 interface Props {
   glossaries: CollectionEntry<'glossary'>[];
+  currentGlossaryTitle?: string;
   currentSlug?: string;
 }
 
-const { glossaries, currentSlug } = Astro.props;
+const { glossaries, currentSlug, currentGlossaryTitle } = Astro.props;
 ---
 
-<ul class='list'>
-  {
-    glossaries.map((glossary) => (
-      <li
-        class:list={[
-          'glossary-title',
-          { active: glossary.slug === currentSlug },
-        ]}
-      >
-        <a class='glossary-link' href={`/glossary/${glossary.slug}`}>
-          {glossary.data.title}
-        </a>
-      </li>
-    ))
-  }
-</ul>
+<div
+  class='aside'
+  x-data=`{
+    isExpanded: false,
+    toggle() {
+      this.isExpanded = !this.isExpanded;
+      document.body.style.overflow = this.isExpanded ? "hidden" : "";
+    },
+    width: 1920
+  }`
+  x-init='width = window.innerWidth'
+  x-on:resize.window='width = window.innerWidth'
+>
+  <div class='container' @click='toggle'>
+    <div class='sidebar-icon'>
+      <AlignLeftIcon height='32px' width='32px' />
+      <span class='current-glossary-title' x-show='!isExpanded'>{currentGlossaryTitle}</span>
+    </div>
+    <ul class='list' x-show='(width > 720) || isExpanded'>
+      {
+        glossaries.map((glossary) => (
+          <li
+            class:list={[
+              'glossary-title',
+              { active: glossary.slug === currentSlug },
+            ]}
+          >
+            <a class='glossary-link' href={`/glossary/${glossary.slug}`}>
+              {glossary.data.title}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 
-<style>
-  .list {
-    font-size: 16px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+  <style>
+    .sidebar-icon {
+      display: none;
+      background: var(--white);
+      cursor: pointer;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  .glossary-title {
-    margin: 5px 0;
-  }
+    .current-glossary-title {
+      padding-right: 20px;
+    }
 
-  .glossary-title:hover {
-    background: var(--white);
-    padding-left: 5px;
-    border-left: 3px rgb(var(--black)) solid;
-    border-radius: 4px 0 0 4px;
-  }
+    .list {
+      font-size: 16px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
 
-  .glossary-title.active {
-    background: var(--white);
-    padding-left: 5px;
-    border-left: 3px rgb(var(--gray-light)) solid;
-    border-radius: 4px 0 0 4px;
-  }
+    .glossary-title {
+      margin: 5px 0;
+    }
 
-  .glossary-link {
-    text-decoration: none;
-    display: block;
-    width: 100%;
-  }
-</style>
+    .glossary-title:hover {
+      background: var(--white);
+      padding-left: 5px;
+      border-left: 3px rgb(var(--black)) solid;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .glossary-title.active {
+      background: var(--white);
+      padding-left: 5px;
+      border-left: 3px rgb(var(--gray-light)) solid;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .glossary-link {
+      text-decoration: none;
+      display: block;
+      width: 100%;
+    }
+
+    @media (max-width: 720px) {
+      .sidebar-icon {
+        display: flex;
+      }
+
+      .list {
+        height: 100vh;
+        padding: 20px;
+        z-index: 1;
+        background: rgb(var(--gray-light));
+      }
+    }
+  </style>
+</div>

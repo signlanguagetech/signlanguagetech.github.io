@@ -29,6 +29,7 @@ const { Content } = await glossary.render();
   <GlossaryMain
     glossaries={glossaries}
     link={glossary.data.ytShortEmbeddedLink}
+    currentGlossaryTitle={glossary.data.title}
     currentSlug={glossary?.slug}
   >
     <GlossaryContent>

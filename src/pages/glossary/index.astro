@@ -12,7 +12,6 @@ const subDescription = `${SITE_DESCRIPTION} | glossary`;
 
 export async function getStaticPath() {
   const glossary = first(await getCollection('glossary'));
-  console.log({ glossary });
   return {
     props: glossary,
   };
@@ -22,13 +21,13 @@ export async function getStaticPath() {
 const glossaries = (await getCollection('glossary')).sort(sortDate);
 const glossary = first(glossaries);
 const { Content } = await glossary!.render();
-console.log(glossary?.data.title);
 ---
 
 <Layout title={subTitle} description={subDescription}>
   <GlossaryMain
     glossaries={glossaries}
     link={glossary?.data.ytShortEmbeddedLink}
+    currentGlossaryTitle={glossary?.data.title}
     currentSlug={glossary?.slug}
   >
     <GlossaryContent>
