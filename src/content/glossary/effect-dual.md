@@ -5,7 +5,7 @@ pubDate: 'April.13.2024'
 ytShortEmbeddedLink: 'https://www.youtube.com/embed/bCGzKjVnJNE'
 ---
 
-# Effect dual
+# Effect Dual
 
 In the context of APIs, "dual" refers to a function that supports both the "data-first" and "data-last" variants. It means that the API can be used interchangeably with either style, depending on the developer's preference.
 
