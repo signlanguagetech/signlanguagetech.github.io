@@ -22,4 +22,4 @@ const result = pipe(
 Effect.runSync(result)
 ```
 
-[read more](https://effect.website/docs/guides/essentials/pipeline)
+[learn more about Pipeline on Effect guides](https://effect.website/docs/guides/essentials/pipeline)

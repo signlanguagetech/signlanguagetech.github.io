@@ -3,6 +3,7 @@ title: 'Encounter: Deaf/Hard-Of-Hearing and Hearing People Connect Through Sign 
 description: "At KubeCon Paris 2024, I as A deaf individual walking through the booths encountered a hearing signer, sparking a heartwarming conversation about their shared love of sign language. The hearing signer reveals that She learned the sign language while studying in San Francisco and enjoys using it to connect with the deaf community. I express their gratitude and emphasize the importance of communication and understanding between both communities, regardless of fluency. The encounter leaves both individuals feeling inspired and connected."
 pubDate: 'May.11.2024'
 thumbnail: '/videos-photos/encounter-deaf-hard-of-hearing-and-hearing-people-connect-through-sign-language.webp'
+alt: 'KubeCon Conference 2024 Youtube Thumbnail'
 tags: 
   - Conference
 ---

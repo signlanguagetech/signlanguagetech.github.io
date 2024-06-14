@@ -24,4 +24,4 @@ This `dual` function in Effect is particularly useful in a static-typed language
 
 <iframe class="glossary-yt-frame" src="https://www.youtube.com/embed/K30lWUYluI4?si=wNqkI2t_SjuYB_bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-[read more](https://effect.website/docs/guides/style/dual)
+[learn more about Dual on Effect guides](https://effect.website/docs/guides/style/dual)

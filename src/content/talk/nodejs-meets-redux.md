@@ -4,6 +4,7 @@ description: "Node.js and Redux! Get ready for a wild ride through the live codi
 speaker: 'Alfonso Balderas Torres'
 pubDate: 'May.28.2024'
 thumbnail: '/talks-photos/nodejs-meets-redux-small.webp'
+alt: 'Node.js Meets Redux Youtube Thumbnail'
 tags:
   - NodeJs
   - JavaScript
