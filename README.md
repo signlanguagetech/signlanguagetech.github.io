@@ -8,7 +8,7 @@ We welcome contributions to this repository.
 
 ## Additional Resources
 
-* [Sign Language Tech](https://signlanguagetech.github.io/)
+* [Sign Language Tech](https://signlanguagetech.com/)
 
 ## Contact
 
