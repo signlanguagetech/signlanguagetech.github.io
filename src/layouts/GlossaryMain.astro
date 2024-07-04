@@ -27,7 +27,7 @@ const { glossaries, link, currentSlug, currentGlossaryTitle } = Astro.props;
     {
       link && (
         <>
-          <h4>How to Sign</h4>
+          <h2 class='sign'>How to Sign</h2>
           <YtShort link={link} />
         </>
       )
@@ -43,6 +43,10 @@ const { glossaries, link, currentSlug, currentGlossaryTitle } = Astro.props;
 
   .aside-left {
     min-width: 160px;
+  }
+
+  .sign {
+    font-size: 1.563em;
   }
 
   @media (max-width: 720px) {

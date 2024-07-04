@@ -23,12 +23,12 @@ import Search from './Search.astro';
   x-on:resize.window='width = window.innerWidth'
 >
   <nav class='nav'>
-    <h2 class='sub-header'>
+    <h1 class='sub-header'>
       <a class='nav-link slt-link' href='/'>
         <SltIcon height='32px' width='32px' />
         <span class='slt-text'>Sign Language Tech</span>
       </a>
-    </h2>
+    </h1>
     <Search />
     <div class='menu-icon' @click='toggle'>
       <span x-show='!isOpen'>
