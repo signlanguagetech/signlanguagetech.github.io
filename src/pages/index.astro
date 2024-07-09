@@ -1,38 +1,104 @@
 ---
-import { getCollection } from 'astro:content';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Layout from '../layouts/Layout.astro';
-import StripeList from '../components/StripeList.astro';
-const subTitle = SITE_TITLE + ' | latest';
-const subDescription = `${SITE_DESCRIPTION} | latest update`;
+import SltStackImg from '../components/icons/SltStackImg.astro';
 
-const talks = await getCollection('talk');
-const videos = await getCollection('video');
-
-const latestVideos = [...talks, ...videos].sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
 ---
 
-<Layout title={subTitle} description={subDescription}>
-  <main>
-    <h1 class='main-title'>
-      Empowering the Deaf Community through Technology and Innovation
-    </h1>
-    <p class='mb-2'>
-      Sign Language Tech helps upskill your skill, expand your knowledge, and
-      empowers the deaf and hard of hearing community.
-    </p>
-
-    <p>check out the latest videos:</p>
-    <section>
-      <StripeList videoContents={latestVideos} />
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class='main-content'>
+    <section class='main-content__intro'>
+      <div class='section-left'>
+        <h1 class='title'>
+          Empowering 
+          the Deaf Community 
+          through Technology
+          and Innovation
+        </h1>
+        <h2 class='sub-title mb-2'>
+          Sign Language Tech helps upskill your skill,
+          expand your knowledge, and empowers the deaf 
+          and hard of hearing community.
+        </h2>
+        <button class='primary-button'><a href='/video'>Explore more</a></button>
+      </div>
+      <div class='section-right'>
+        <SltStackImg width='300px' />
+      </div>
+    </section>
+    <section class='main-content__features'>
+      <h1>Master coding with interactive tutorials, insightful interviews, and workshops delivered in ASL/ISL</h1>
+      <div class='pictures'>
+        <img src='/public/conference.webp' alt='conference'>
+        <img src='/public/workshop.webp' alt='workshop'>
+        <img src='/public/coding.webp' alt='coding'>
+      </div>
+    </section>
+    <section class='main-content__explore-more'>
+      <button class='primary-button'><a href='/video'>Explore more</a></button>
     </section>
   </main>
 </Layout>
 
 <style>
-  .main-title {
-    font-size: 28px;
+  .pictures {
+    display: flex;
+    height: 200px;
+    /* overflow-y; hidden; */
+    gap: 20px;
+  }
+
+  .pictures img {
+    border: 5px solid rgb(var(--black));
+    filter: grayscale(100%) brightness(130%);
+  }
+
+  .pictures img:hover {
+    filter: grayscale(0);
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+  .main-content__intro {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .main-content__partners {
+    padding: 100px;
+    border: 1px black solid;
+  }
+
+  .main-content__features h1 {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+  }
+
+  .main-content__explore-more {
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .title {
+    white-space: pre-line;
+    font-size: 2.8em;
+  }
+
+  .sub-title {
+    white-space: pre-line;
+    font-size: 1em;
+  }
+
+  @media  (max-width: 720px) {
+    .section-right {
+      display: none;
+    }
+
+    .pictures {
+      flex-direction: column;
+      height: unset;
+    }
   }
 </style>

@@ -1,0 +1,16 @@
+---
+import type { Pixel } from '../../model/model';
+
+export interface Props {
+  readonly width: Pixel;
+}
+
+const { width } = Astro.props;
+---
+
+<img
+  loading='eager'
+  width={width}
+  src='public/slt-stack.webp'
+  alt='stack'
+/>

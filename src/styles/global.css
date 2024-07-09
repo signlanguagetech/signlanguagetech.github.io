@@ -188,6 +188,30 @@ hr {
   height: 360px;
 }
 
+.primary-button {
+  width: 100px;
+  background-color: rgb(var(--gray));
+  color: var(--white);
+  padding: 8px;
+  border-radius: 5px;
+  border-color: rgb(var(--gray));
+  cursor: pointer;
+  border: 0px;
+}
+
+.primary-button:hover {
+  background-color: rgb(var(--gray-dark));
+}
+
+.primary-button:active {
+  opacity: 0.9;
+}
+
+.primary-button a {
+  text-decoration: none;
+  color: var(--white);
+}
+
 @media (max-width: 720px) {
   .youtube-frame {
     height: 215px;
