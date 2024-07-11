@@ -2,7 +2,7 @@
 title: 'Schema Decoding Approaching Steps with Effect TS'
 description: "While practicing, I can't believe what I did this way that my productivity was automatic to getting approaches better and better. more steps could be there i absolutely will dive deep. stay tuned."
 pubDate: 'April.28.2024'
-thumbnail: '/videos-photos/Schema-Decoding-Approaching-Steps-with-Effect-TS.webp'
+thumbnail: 'Schema-Decoding-Approaching-Steps-with-Effect-TS.webp'
 alt: 'Milad in black t-shirt with IDE'
 tags: 
   - Effect
