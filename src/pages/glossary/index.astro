@@ -17,7 +17,6 @@ export async function getStaticPath() {
   };
 }
 
-// const glossary = Astro.props;
 const glossaries = (await getCollection('glossary')).sort(sortDate);
 const glossary = first(glossaries);
 const { Content } = await glossary!.render();

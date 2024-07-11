@@ -3,21 +3,22 @@ import { capitalizeFirstLetter } from '../helpers/helper';
 import type { Tag } from '../model/model';
 
 interface Props {
-  tags: Tag[];
-  currentTag?: string;
+  readonly basePath: string;
+  readonly tags: readonly Tag[];
+  readonly currentTag?: string;
 }
 
-const { tags, currentTag } = Astro.props;
+const { tags, currentTag, basePath } = Astro.props;
 ---
 
 <div class='tag-list'>
   <div class:list={['chip', { active: currentTag === 'view-all' }]}>
-    <a class='tag-link' href={`/video`}>View all</a>
+    <a class='tag-link' href={basePath}>View all</a>
   </div>
   {
     tags.map((t) => (
       <div class:list={['chip', { active: currentTag === t.tag }]}>
-        <a class='tag-link' href={`/video/tags/${t.tag}`}>
+        <a class='tag-link' href={`${basePath}/tags/${t.tag}`}>
           {capitalizeFirstLetter(t.tag)} ({t.count})
         </a>
       </div>

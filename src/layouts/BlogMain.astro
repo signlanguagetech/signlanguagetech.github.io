@@ -1,24 +1,25 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import ArticleList from '../components/ArticleList.astro';
 import TagList from '../components/TagList.astro';
 import type { Tag } from '../model/model';
+import BlogList from '../components/BlogList.astro';
 
 interface Props {
-  readonly tags: Tag[];
-  readonly articles: readonly CollectionEntry<'video'>[];
+  readonly basePath: string;
+  readonly tags: readonly Tag[];
+  readonly blogs: readonly CollectionEntry<'blog'>[];
   readonly currentTag?: string;
 }
 
-const { tags, articles, currentTag } = Astro.props;
+const { tags, blogs, currentTag, basePath } = Astro.props;
 ---
 
 <main class='main'>
   <div class='tag-chips'>
-    <TagList tags={tags} currentTag={currentTag} />
+    <TagList basePath={basePath} tags={tags} currentTag={currentTag} />
   </div>
   <section class='videos-section'>
-    <ArticleList articles={articles} />
+    <BlogList blogs={blogs} />
   </section>
 </main>
 

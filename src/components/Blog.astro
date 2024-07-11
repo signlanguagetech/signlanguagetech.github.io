@@ -5,21 +5,21 @@ import type { ContentKeys } from '../model/model';
 import FormattedDate from './FormattedDate.astro';
 
 interface Props {
-  article: CollectionEntry<ContentKeys>;
+  readonly blog: CollectionEntry<ContentKeys>;
 }
 
-const { article } = Astro.props;
+const { blog } = Astro.props;
 ---
 
 <div class='title-description-group'>
-  <a class='link' href={`/${article.collection}/${article.slug}/`}>
-    <h2 class='title'>{article.data.title}</h2>
+  <a class='link' href={`/${blog.collection}/${blog.slug}/`}>
+    <h2 class='title'>{blog.data.title}</h2>
   </a>
-  <div class='description'>{article.data.description}</div>
+  <div class='description'>{blog.data.description}</div>
 </div>
 <div class='date-speaker-group'>
-  <FormattedDate class:list={['date']} date={article.data.pubDate} />
-  <span class='speaker'>{article.data.speaker}</span>
+  <FormattedDate class:list={['date']} date={blog.data.pubDate} />
+  <span class='speaker'>{blog.data.speaker}</span>
 </div>
 
 <style>

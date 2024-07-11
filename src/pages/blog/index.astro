@@ -5,15 +5,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import Layout from '../../layouts/Layout.astro';
 import { countTags, getTotalTags } from '../../helpers/video.helper';
 import { sortDate } from '../../helpers/helper';
-import VideoMain from '../../layouts/VideoMain.astro';
+import BlogMain from '../../layouts/BlogMain.astro';
 
 const subTitle = SITE_TITLE + ' | videos';
 const subDescription = `${SITE_DESCRIPTION} | videos updated`;
 
-const videos = (await getCollection('video')).sort(sortDate);
-const tags = countTags(getTotalTags(videos));
+const blogs = (await getCollection('blog')).sort(sortDate);
+const tags = countTags(getTotalTags(blogs));
 ---
 
   <Layout title={subTitle} description={subDescription}>
-    <VideoMain tags={tags} articles={videos}  currentTag='view-all'/>
+    <BlogMain basePath='/blog' tags={tags} blogs={blogs}  currentTag='view-all'/>
   </Layout>

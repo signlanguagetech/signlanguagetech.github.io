@@ -2,20 +2,20 @@
 import type { CollectionEntry } from 'astro:content';
 
 import type { ContentKeys } from '../model/model';
-import Article from './Article.astro';
+import Blog from './Blog.astro';
 
 interface Props {
-  readonly articles: readonly CollectionEntry<ContentKeys>[];
+  readonly blogs: readonly CollectionEntry<ContentKeys>[];
 }
 
-const { articles } = Astro.props;
+const { blogs } = Astro.props;
 ---
 
 <ul class='list'>
   {
-    articles.map((article) => (
-      <li class='article'>
-        <Article article={article} />
+    blogs.map((blog) => (
+      <li class='blog'>
+        <Blog blog={blog} />
       </li>
     ))
   }
@@ -28,7 +28,7 @@ const { articles } = Astro.props;
     padding: 0;
   }
 
-  .article {
+  .blog {
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -37,7 +37,7 @@ const { articles } = Astro.props;
     border: 1px solid rgb(var(--gray));
   }
 
-  .article:hover {
+  .blog:hover {
     box-shadow: var(--box-shadow);
   }
 </style>

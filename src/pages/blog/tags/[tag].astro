@@ -7,12 +7,12 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../../../consts';
 import Layout from '../../../layouts/Layout.astro';
 import { countTags, getTotalTags } from '../../../helpers/video.helper';
 import { sortDate } from '../../../helpers/helper';
-import VideoMain from '../../../layouts/VideoMain.astro';
+import BlogMain from '../../../layouts/BlogMain.astro';
 
 export async function getStaticPaths() {
-  const videos = (await getCollection('video')).sort(sortDate);
+  const blogs = (await getCollection('blog')).sort(sortDate);
 
-  const tags: string[] = getTotalTags(videos);
+  const tags = getTotalTags(blogs);
   const tagCounts = countTags(tags);
 
   return tagCounts.map(({ tag }) => {
@@ -21,7 +21,7 @@ export async function getStaticPaths() {
       props: {
         tag,
         tags: tagCounts,
-        videos: videos.filter((video) =>
+        blogs: blogs.filter((video) =>
           video.data.tags?.map((t) => t.toLowerCase()).includes(tag)
         ),
       },
@@ -30,17 +30,17 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  tag: string;
-  tags: Tag[];
-  videos: CollectionEntry<'video'>[];
+  readonly tag: string;
+  readonly tags: readonly Tag[];
+  readonly blogs: readonly CollectionEntry<'blog'>[];
 }
 
-const { tag, tags, videos } = Astro.props;
+const { tag, tags, blogs } = Astro.props;
 
-const subTitle = `${SITE_TITLE} | videos | ${tag}`;
-const subDescription = `${SITE_DESCRIPTION} | videos updated`;
+const subTitle = `${SITE_TITLE} | blogs | ${tag}`;
+const subDescription = `${SITE_DESCRIPTION} | blogs updated`;
 ---
 
 <Layout title={subTitle} description={subDescription}>
-  <VideoMain tags={tags} currentTag={tag} articles={videos} />
+  <BlogMain basePath='/blog' tags={tags} currentTag={tag} blogs={blogs} />
 </Layout>
