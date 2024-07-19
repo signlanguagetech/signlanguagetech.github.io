@@ -11,34 +11,34 @@ interface Props {
 const { blog } = Astro.props;
 ---
 
-<div class='title-description-group'>
-  <a class='link' href={`/${blog.collection}/${blog.slug}/`}>
+<a class='link' href={`/${blog.collection}/${blog.slug}/`}>
+  <div class='title-description-group'>
     <h2 class='title'>{blog.data.title}</h2>
-  </a>
-  <div class='description'>{blog.data.description}</div>
-</div>
-<div class='date-speaker-group'>
-  <FormattedDate class:list={['date']} date={blog.data.pubDate} />
-  <span class='speaker'>{blog.data.speaker}</span>
-</div>
-
-<style>
-  .title-description-group {
-    flex-grow: 1;
-    width: 200px;
+    <div class='description'>{blog.data.description}</div>
+  </div>
+  <div class='date-speaker-group'>
+    <FormattedDate class:list={['date']} date={blog.data.pubDate} />
+    <span class='speaker'>{blog.data.speaker}</span>
+  </div>
+</a>
+  
+  <style>
+  .link {
+    /* width: 100%; */
+    text-decoration: none;
   }
 
-  .link {
-    text-decoration: none;
+  .link:hover {
+    cursor: pointer;
+  }
+
+  .title-description-group {
+   margin-bottom: 20px; 
   }
 
   .title {
     color: rgb(var(--black));
     font-size: 24px;
-  }
-
-  .title:hover {
-    color: rgb(var(--gray));
   }
 
   .description {
@@ -56,7 +56,6 @@ const { blog } = Astro.props;
   .date-speaker-group {
     display: flex;
     flex-direction: column;
-    width: 140px;
   }
 
   .speaker {
