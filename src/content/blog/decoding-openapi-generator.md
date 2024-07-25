@@ -14,6 +14,8 @@ pubDate: 'July.25.2024'
   allowfullscreen>
 </iframe>
 
+the source code is below if you want to jump :) 
+
 <a href="https://openapi-generator.tech" target="_blank">the OpenAPI Generator</a> is a tool that's gaining significant popularity in the world of API design and development. Though I'm excited to share my newfound knowledge, I must admit that my journey was not altogether smooth. There were challenges along the way that tested my patience and determination.
 
 One of the key points of friction I encountered was navigating through certain elements of data that seemed to appear out of the blue. Initially, I had trouble comprehending their source and function within the broader scheme of things, which left me somewhat confused. the following example i had trouble understanding:
@@ -51,3 +53,5 @@ My experience at this is some invaluable lessons. The most important one being t
 Another vital lesson was the importance of being a problem solver and not being afraid to get my hands dirty. In the world of programming, challenges are inevitable. It's how one responds to these challenges that molds them into a competent and confident developer.
 
 So, yes, understanding and mastering anything in software world is adventure, but it is also an enriching learning experience that push us further along in our journey as a web developer. With every challenge overcome, we become stronger, smarter, and more ready for the next step. This adventure served as a reminder that in the realm of development, persistence and patience always yield success.
+
+<a href="https://github.com/miladvafaeifard/api">GitHub source</a>
