@@ -40,6 +40,12 @@ Thus, I shifted my focus to reading the comprehensive documentation of OpenAPI, 
 
 Eventually, I discovered fantastic features in <a href="https://openapi-generator.tech/docs/globals">Global Properties</a>. This feature allowed me to efficiently debug the problematic data and understand its source, providing a significant breakthrough: `--global-property=debugOperations` or `--global-property=debugModels`
 
+Also another problem that it outputs long text and hard to see in the cli, good news there is a solution we can find is to use `> file.txt`
+
+```shell
+  openapi-generator generate -i ./api/openapi.yaml -g typescript-angular -t ./templates/nestjs/ -o ./dist --global-property=debugOperations > file.txt
+```
+
 My experience at this is some invaluable lessons. The most important one being the necessity of familiarizing oneself with the documentation before using a development tool. This approach creates a solid foundation for understanding the tool's operation, thereby saving valuable time and effort.
 
 Another vital lesson was the importance of being a problem solver and not being afraid to get my hands dirty. In the world of programming, challenges are inevitable. It's how one responds to these challenges that molds them into a competent and confident developer.
