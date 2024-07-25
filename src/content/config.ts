@@ -8,9 +8,9 @@ const blogCollection = defineCollection({
     speaker: z.string().optional(),
     pubDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
-    thumbnail: z.string(),
+    thumbnail: z.string().optional(),
     alt: z.string().optional(),
-    tags: z.array(z.string()).optional(),
+    tags: z.array(z.string()).optional().default([]),
   })
 });
 
