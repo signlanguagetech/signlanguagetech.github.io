@@ -40,7 +40,7 @@ Emerging from this challenge, the first step I took was to test the command line
 
 Thus, I shifted my focus to reading the comprehensive documentation of OpenAPI, arming myself with the knowledge necessary to understand the different facets of the tool. To my surprise, the answers to most of my queries were right there in the documentation no matter how complex they seem, might have simple solutions.
 
-Eventually, I discovered fantastic features in <a href="https://openapi-generator.tech/docs/globals">Global Properties</a>. This feature allowed me to efficiently debug the problematic data and understand its source, providing a significant breakthrough: `--global-property=debugOperations` or `--global-property=debugModels`
+Eventually, I discovered fantastic features in <a href="https://openapi-generator.tech/docs/globals" target="_blank">Global Properties</a>. This feature allowed me to efficiently debug the problematic data and understand its source, providing a significant breakthrough: `--global-property=debugOperations` or `--global-property=debugModels`
 
 Also another problem that it outputs long text and hard to see in the cli, good news there is a solution we can find is to use `> file.txt`
 
@@ -54,4 +54,4 @@ Another vital lesson was the importance of being a problem solver and not being 
 
 So, yes, understanding and mastering anything in software world is adventure, but it is also an enriching learning experience that push us further along in our journey as a web developer. With every challenge overcome, we become stronger, smarter, and more ready for the next step. This adventure served as a reminder that in the realm of development, persistence and patience always yield success.
 
-<a href="https://github.com/miladvafaeifard/api">GitHub source</a>
+<a href="https://github.com/miladvafaeifard/api" target="_blank">GitHub source</a>
