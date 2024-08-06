@@ -1,3 +1,15 @@
+
+/* TODO: css 'from', how it works if useful
+
+:root {
+  --base: #556bdd;
+  --swatch1: hsl(from var(--base) h s 0%);
+  --swatch2: hsl(from var(--base) h s 25%);
+  --swatch3: hsl(from var(--base) h s 50%);
+  --swatch4: hsl(from var(--base) h s 75%);
+  --swatch5: hsl(from var(--base) h s 100%);
+} */
+
 :root {
   --accent: #2337ff;
   --accent-dark: #000d8a;

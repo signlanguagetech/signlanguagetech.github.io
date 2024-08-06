@@ -20,11 +20,11 @@ On the summer in Budapest, the historic and beautiful Urania National Film Theat
 
 On the first day (June 27), Kicking off with my first talk, I dove into TypeScript and discussed how the 'Effect' can simplify complex coding challenges. The room was full with developers and tech enthusiasts who seemed engaged and interested, were reflecting on the points raised. 
 
-![alt standing next to the tv, pointing to the slide](/lighting-talk-effect.png) 
+![alt standing next to the tv, pointing to the slide](/lighting-talk-effect.webp)
 
 I was standing next to the big TV that showcased my slides, I looked out their faces were great gathering in the audience. The interpreters were also there besides me, and prepared to make the event inclusive and accessible. My aim was simple: to enlighten and hopefully inspire all of us.
 
-![alt the audience standing](/audience-standing.png)
+![alt the audience standing](/audience-standing.webp)
 
 The next day (June 28) Moving onto my second talk about 'Accessibility,' the vibe became a bit more serious. Sharing real-life stories that highlighted often overlooked challenges, we all felt connected by the importance of the subject. Yet, despite the seriousness, we also shared lighter moments. in the afternoon on that same day, we also discussed about "Accessibility and Inclusive Design with Isabela Moreira, Ante Tomić".
 
@@ -34,11 +34,11 @@ During breaks, we enjoyed strolling through the Urania atmosphere, appreciating 
 
 One of the highlights for me was seeing how some attendees were eager to learn more about the 'Effect' after my talk, with some even picking up a bit of sign language. It was incredibly heartwarming to see their enthusiasm and willingness to learn something new right away.
 
-Regarding an accessibility issue that occurred on the first day, the closed captions were significantly delayed and not very accurate. I reached out to the team, and we discussed how to resolve this. We were using the closed caption tool built into Microsoft PowerPoint, but some issues, such as the font size, color, and position, could not be adjusted at that moment. Despite these minor accessibility challenges, ![alt closed-captions on tv](/closed-captions-tv.png)this experience taught me how to shape and improve such accommodations. I’ve taken notes and will work on refining these aspects further. ![alt captioning slide](/captioning-slide.png)
+Regarding an accessibility issue that occurred on the first day, the closed captions were significantly delayed and not very accurate. I reached out to the team, and we discussed how to resolve this. We were using the closed caption tool built into Microsoft PowerPoint, but some issues, such as the font size, color, and position, could not be adjusted at that moment. Despite these minor accessibility challenges, ![alt closed-captions on tv](/closed-captions-tv.webp)this experience taught me how to shape and improve such accommodations. I’ve taken notes and will work on refining these aspects further. ![alt captioning slide](/captioning-slide.webp)
 
 This conference was my first time speaking at JsConf Budapest. engaging with such a diverse group was both enlightening and humbling.
 
-![alt celebrating-closed-events](/closed-events.png)
+![alt celebrating-closed-events](/closed-events.webp)
 
 New ideas and happy memories of connections filled me. As the event wrapped up, I felt a mix of fulfillment and excitement for the future. I walked away from the Urania National Film Theatre inspired and looking forward to hopefully taking on a bigger stage at another major tech conference soon.
 
