@@ -42,5 +42,5 @@ This conference was my first time speaking at JsConf Budapest. engaging with suc
 
 New ideas and happy memories of connections filled me. As the event wrapped up, I felt a mix of fulfillment and excitement for the future. I walked away from the Urania National Film Theatre inspired and looking forward to hopefully taking on a bigger stage at another major tech conference soon.
 
-![alt smiling face](/Tim-Milad-community-lounge.jpg)
+![alt smiling face](/Tim-Milad-community-lounge.webp)
 <a href="https://x.com/NERDDISCO">Tim</a> and me -> Cheers!
