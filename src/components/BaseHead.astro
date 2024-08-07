@@ -61,11 +61,20 @@ const { title, description, image = '/opengraph-image.png' } = Astro.props;
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MX94SJZ1E8"></script>
+<script src='https://www.googletagmanager.com/gtag/js?id=G-MX94SJZ1E8'></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  type DataLayer = 'js' | 'config' | Date | string;
 
-  gtag('config', 'G-MX94SJZ1E8');
+  declare global {
+    interface Window {
+      dataLayer: readonly DataLayer[];
+    }
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(...args: readonly DataLayer[]) {
+    window.dataLayer = window.dataLayer.concat(args);
+  }
+
+  gtag('js', new Date(), 'config', 'G-MX94SJZ1E8');
 </script>
