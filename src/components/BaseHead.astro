@@ -22,6 +22,16 @@ const { title, description, image = '/opengraph-image.png' } = Astro.props;
   data-blockingmode='auto'
   type='text/javascript'></script>
 
+<!-- Google tag (gtag.js) -->
+<script is:inline src='https://www.googletagmanager.com/gtag/js?id=G-MX94SJZ1E8'></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments) }
+
+  gtag('js', new Date());
+  gtag('config', 'G-MX94SJZ1E8');
+</script>
+
 <!-- Global Metadata -->
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
