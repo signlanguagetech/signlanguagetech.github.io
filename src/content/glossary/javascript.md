@@ -2,7 +2,7 @@
 title: 'JavaScript (JS)'
 description: "JavaScript is primarily a client-side language. JavaScript started at Netscape, a web browser developed in the 1990s."
 pubDate: 'Aug.09.2024'
-ytShortEmbeddedLink: 'https://youtube.com/embed/3mqUx0QBPe8'
+ytShortEmbeddedLink: 'https://youtube.com/embed/OYG5kN7KDSk'
 ---
 
 ## What's JavaScript?
