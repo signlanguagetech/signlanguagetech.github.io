@@ -13,6 +13,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/opengraph-image.png' } = Astro.props;
 ---
+
+<script
+  is:inline
+  id='Cookiebot'
+  src='https://consent.cookiebot.com/uc.js'
+  data-cbid='da1062bc-71f3-4e20-a0d2-46c5c4a418f1'
+  data-blockingmode='auto'
+  type='text/javascript'></script>
+
 <!-- Global Metadata -->
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width,initial-scale=1' />
