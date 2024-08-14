@@ -7,9 +7,9 @@ import '@docsearch/css';
 <script>
   import docsearch from '@docsearch/js';
 
-  const apiKey = import.meta.env.ALOGIA_PUBLIC_APP_ID;
-  const appId = import.meta.env.ALOGIA_PUBLIC_APP_ID;
-  const indexName = import.meta.env.ALOGIA_INDEX_NAME
+  const appId = import.meta.env.PUBLIC_ALOGIA_APP_ID;
+  const apiKey = import.meta.env.PUBLIC_ALOGIA_API_KEY;
+  const indexName = import.meta.env.PUBLIC_ALOGIA_INDEX_NAME;
 
   docsearch({
     container: '#search',
