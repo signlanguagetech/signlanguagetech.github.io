@@ -29,6 +29,9 @@ importers:
       '@docsearch/js':
         specifier: '3'
         version: 3.6.0(@algolia/client-search@4.23.3)(search-insights@2.14.0)
+      '@jop-software/astro-cookieconsent':
+        specifier: ^3.0.0
+        version: 3.0.0(vanilla-cookieconsent@3.0.1)
       '@types/alpinejs':
         specifier: ^3.13.10
         version: 3.13.10
@@ -41,6 +44,9 @@ importers:
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
+      vanilla-cookieconsent:
+        specifier: ^3.0.1
+        version: 3.0.1
 
 packages:
 
@@ -711,6 +717,11 @@ packages:
 
   '@johnsoncodehk/vscode-html-languageservice@5.2.0-34a5462':
     resolution: {integrity: sha512-etqLfpSJ5zaw76KUNF603be6d6QsiQPmaHr9FKEp4zhLZJzWCCMH6Icak7MtLUFLZLMpL761mZNImi/joBo1ZA==}
+
+  '@jop-software/astro-cookieconsent@3.0.0':
+    resolution: {integrity: sha512-EbjaGgzqKW17Ik8JI7HqBboCPIWsz+6CUh3s6Nw3AXp+TbFpg+GVI6Hqhtw7A+8tmO2N3KGsuaKP7GQbrZyTHw==}
+    peerDependencies:
+      vanilla-cookieconsent: ^3.0.0
 
   '@jridgewell/gen-mapping@0.3.5':
     resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
@@ -2189,6 +2200,9 @@ packages:
     peerDependencies:
       browserslist: '>= 4.21.0'
 
+  vanilla-cookieconsent@3.0.1:
+    resolution: {integrity: sha512-gqc4x7O9t1I4xWr7x6/jtQWPr4PZK26SmeA0iyTv1WyoECfAGnu5JEOExmMEP+5Fz66AT9OiCBO3GII4wDQHLw==}
+
   vfile-location@5.0.2:
     resolution: {integrity: sha512-NXPYyxyBSH7zB5U6+3uDdd6Nybz6o6/od9rk8bp9H8GR3L+cm/fC0uUTbqBmUTnMCUDslAGBOIKNfvvb+gGlDg==}
 
@@ -3030,6 +3044,10 @@ snapshots:
       vscode-languageserver-textdocument: 1.0.11
       vscode-languageserver-types: 3.17.5
       vscode-uri: 3.0.8
+
+  '@jop-software/astro-cookieconsent@3.0.0(vanilla-cookieconsent@3.0.1)':
+    dependencies:
+      vanilla-cookieconsent: 3.0.1
 
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
@@ -5079,6 +5097,8 @@ snapshots:
       browserslist: 4.23.0
       escalade: 3.1.2
       picocolors: 1.0.1
+
+  vanilla-cookieconsent@3.0.1: {}
 
   vfile-location@5.0.2:
     dependencies:

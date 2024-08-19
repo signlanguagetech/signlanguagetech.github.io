@@ -8,7 +8,7 @@ tags:
 
 <iframe 
   class="youtube-frame"
-  src="https://www.youtube.com/embed/LMnR3x8YMog?si=cCccIVyeO7C-inmd"
+  src="https://www.youtube-nocookie.com/embed/LMnR3x8YMog?si=cCccIVyeO7C-inmd"
   title="YouTube video player" 
   frameborder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

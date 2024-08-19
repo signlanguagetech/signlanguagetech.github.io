@@ -5,8 +5,29 @@ import SltStackImg from '../components/icons/SltStackImg.astro';
 
 ---
 
+<script>
+import * as cookieconsent from 'vanilla-cookieconsent';
+import { cookieConsentConfig } from '../helpers/cookie-concent-config.helper';
+
+const resetBtn = document.getElementById('reset-btn')
+const showBtn = document.getElementById('show-btn')
+
+resetBtn?.addEventListener('click', () => {
+  cookieconsent.reset(true)
+  cookieconsent.run(cookieConsentConfig())
+})
+
+// showBtn?.addEventListener('click', () => {
+//   // cookieconsent.reset(true)
+//   console.log('show')
+//   cookieconsent.run(cookieConsentConfig())
+// })
+</script>
+
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class='main-content'>
+    <button type="button" id='reset-btn'>Reset plugin</button>
+    <button type="button" data-cc="show-preferencesModal" id="show-btn">Show preferences modal</button>
     <section class='main-content__intro'>
       <div class='section-left'>
         <h1 class='title'>Empowering

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Sign Language Tech</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        padding: 20px;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    h1, h2 {
+        color: #333;
+    }
+    p {
+        margin: 10px 0;
+    }
+    a {
+        color: #0077CC;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Privacy Policy for Sign Language Tech</h1>
+    <p>At Sign Language Tech, accessible from <a href="https://signlanguagetech.com">https://signlanguagetech.com</a>, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Sign Language Tech and how we use it.</p>
+    <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us via email at <a href="mailto:signlanguagetech@gmail.com">signlanguagetech@gmail.com</a>.</p>
+    
+    <h2>General Data Protection Regulation (GDPR)</h2>
+    <p>We are a Data Controller of your information.</p>
+    <p>Sign Language Tech legal basis for collecting and using the personal information described in this Privacy Policy depends on the Personal Information we collect and the specific context in which we collect the information:</p>
+    <ul>
+        <li>Sign Language Tech needs to perform a contract with you</li>
+        <li>You have given Sign Language Tech permission to do so</li>
+        <li>Processing your personal information is in Sign Language Tech legitimate interests</li>
+        <li>Sign Language Tech needs to comply with the law</li>
+    </ul>
+    
+    <p><strong>Log Files</strong></p>
+    <p>Sign Language Tech follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks.</p>
+
+    <p><strong>Cookies and Web Beacons</strong></p>
+    <p>Like any other website, Sign Language Tech uses ‘cookies’. These cookies are used to store information including visitors' preferences, and the pages on the website that the visitor accessed or visited. The information is used to optimize the users' experience by customizing our web page content based on visitors' browser type and/or other information.</p>
+
+    <p><strong>Google Analytics</strong></p>
+    <p>Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</p>
+    <p>For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: <a href="https://policies.google.com/privacy?hl=en">https://policies.google.com/privacy?hl=en</a></p>
+
+    <h2>Children's Information</h2>
+    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+    <p>Sign Language Tech does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+    <h2>Online Privacy Policy Only</h2>
+    <p>This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Sign Language Tech. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+
+    <h2>Consent</h2>
+    <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
+
+    <p>For more information, please contact us via email: <a href="mailto:signlanguagetech@gmail.com">signlanguagetech@gmail.com</a>.</p>
+</div>
+</body>
+</html>
