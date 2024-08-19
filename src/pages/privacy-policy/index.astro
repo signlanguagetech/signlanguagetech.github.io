@@ -1,0 +1,12 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import Layout from '../../layouts/Layout.astro';
+import PrivacyPolicy from '../../components/PrivacyPolicy.astro';
+
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class='main-content'>
+    <PrivacyPolicy />
+  </main>
+</Layout>
