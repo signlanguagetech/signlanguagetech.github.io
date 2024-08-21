@@ -1,0 +1,61 @@
+---
+
+---
+
+<div x-data='consentModal' id='consentModal'>
+  <div class='consent-modal-body'>
+    <p>
+      This site uses cookies to enhance your experience. By continuing to use
+      our site, you agree to our use of cookies and acknowledge our privacy
+      policy.
+    </p>
+    <button class='primary-button' x-on:click='ok'>OK</button>
+  </div>
+</div>
+
+<style>
+  #consentModal {
+    display: none;
+    justify-content: center;
+    position: sticky;
+    inset: 0;
+    z-index: 90000;
+    background-color: rgba(var(--black), 0.75);
+    padding: 40px;
+  }
+
+  #consentModal.open {
+    display: flex;
+  }
+
+  .consent-modal-body {
+    padding: 20px;
+    background: #fff;
+    border-radius: 7px;
+  }
+
+  .primary-button {
+    float: right;
+  }
+</style>
+
+<script>
+  import Alpine from 'alpinejs';
+  import { getCookie, setCookie } from '../helpers/cookie.helper';
+
+  document.addEventListener('alpine:init', () => {
+    checkCookieConsent();
+    Alpine.data('consentModal', () => ({
+      ok(): void {
+        setCookie('cookieConsent', 'true', 30);
+        document.getElementById('consentModal')!.style.display = 'none';
+      },
+    }));
+  });
+
+  export function checkCookieConsent(): void {
+    if (!Boolean(getCookie('cookieConsent'))) {
+      document.getElementById('consentModal')!.classList.add('open');
+    }
+  }
+</script>
