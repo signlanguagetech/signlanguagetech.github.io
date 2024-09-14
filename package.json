@@ -11,15 +11,15 @@
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.0",
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.0.0",
-    "@astrojs/rss": "^4.0.6",
-    "@astrojs/sitemap": "^3.1.4",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.6",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
     "@docsearch/css": "3",
     "@docsearch/js": "3",
     "@types/alpinejs": "^3.13.10",
     "alpinejs": "^3.14.0",
-    "astro": "^4.8.6",
+    "astro": "^4.15.6",
     "typescript": "^5.4.5"
   }
 }
