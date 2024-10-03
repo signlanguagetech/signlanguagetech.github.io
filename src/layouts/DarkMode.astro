@@ -1,0 +1,93 @@
+---
+const isDarkMode = new Date().getHours() > 18 || new Date().getHours() < 6;
+---
+
+
+  <head>
+    <style>
+    :root {
+      --background-color: white;
+      --text-color: black;
+      --toggle-background: #4c4c4c;
+      --toggle-color: #b3b3b3;
+      --toggle-circle: #9b59b6;
+    }
+
+    .toggle-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+    }
+
+    .toggle-button {
+      width: 70px;
+      height: 38px;
+      background-color: var(--toggle-background);
+      border-radius: 25px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 1s, color 1s;
+      border: 1px solid #fff;
+    }
+
+    .toggle-circle {
+      width: 37px;
+      height: 37px;
+      background-color: var(--toggle-circle);
+      border-radius: 50%;
+      position: absolute;
+      top: 1px;
+      /* left: 8px; */
+      transition: transform 0.3s;
+    }
+
+    .toggle-button.dark .toggle-circle {
+      transform: translateX(33px);
+    }
+
+    .icon {
+      width: 14px;
+      height: 14px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .icon.sun {
+      left: 12px;
+    }
+
+    .icon.moon {
+      right: 12px;
+    }
+      </style>
+  </head>
+  <body class={isDarkMode ? "dark" : ""}>
+    <div class="toggle-container">
+      <div class="toggle-button {isDarkMode ? 'dark' : ''}" id="toggle-button">
+        <div class="toggle-circle"></div>
+        <svg class="icon sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="icon moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 14 9 9 0 009.79-4.21z"/>
+        </svg>
+      </div>
+    </div>
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggle-button");
+        if (toggleButton) {
+          toggleButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark");
+            this.classList.toggle("dark");
+          });
+        }
+      });
+    </script>
+    </script>
+  </body>
+

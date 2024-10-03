@@ -229,3 +229,28 @@ hr {
     height: 215px;
   }
 }
+
+
+  /* Dark */
+
+body.dark,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark .title,
+body.dark .header,
+body.dark footer,
+body.dark span,
+body.dark li,
+body.dark ul,
+body.dark ol,
+body.dark footer,
+body.dark header,
+body.dark nav,
+body.dark .toggle-button,
+body.dark .DocSearch-Button {
+  background: rgb(58, 58, 58);
+  color: white;
+  transition:color 2s;
+}
