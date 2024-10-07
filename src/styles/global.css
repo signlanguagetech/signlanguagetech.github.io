@@ -255,3 +255,7 @@ hr {
     color: white;
     transition:color 2s;
   }
+
+  body.dark .DocSearch-Dropdown {
+    background: #000;
+}
