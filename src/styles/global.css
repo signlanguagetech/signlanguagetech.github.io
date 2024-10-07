@@ -231,7 +231,8 @@ hr {
 }
 
   /* Dark */
-
+  body.dark code,
+  body.dark p a,
   body.dark,
   body.dark h1,
   body.dark h2,
@@ -242,6 +243,7 @@ hr {
   body.dark footer,
   body.dark span,
   body.dark li,
+  body.dark li a,
   body.dark ul,
   body.dark ol,
   body.dark footer,

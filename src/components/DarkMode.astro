@@ -33,6 +33,7 @@ const isDarkMode = new Date().getHours() > 18 || new Date().getHours() < 6;
     :root {
       --background-color: white;
       --text-color: black;
+      --text-color: white;
       --toggle-background: #4c4c4c;
       --toggle-color: #b3b3b3;
       --toggle-circle: #a6a6a6;
@@ -54,6 +55,7 @@ const isDarkMode = new Date().getHours() > 18 || new Date().getHours() < 6;
       cursor: pointer;
       transition: background-color 1s, color 1s;
       border: 1px solid #fff;
+      color: var(--text-color)
     }
 
     .toggle-circle {
