@@ -1,0 +1,48 @@
+---
+import type { Pixel } from '../../model/model';
+
+export interface Props {
+  readonly height: Pixel;
+  readonly width: Pixel;
+}
+
+const { height = '24px', width = '24px' } = Astro.props;
+---
+
+<svg
+  class="icon moon"
+  xmlns="http://www.w3.org/2000/svg"
+  height={height}
+  width={width}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round">
+    <path
+      d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 14 9 9 0 009.79-4.21z"
+    ></path>
+</svg>
+
+<style>
+  .icon {
+    position: absolute;
+    top: 50%;
+    right: -8%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icon.moon {
+    stroke: #ffffff; /* Color blanco para la luna */
+  }
+
+  .toggle-button {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: #4c4c4c; /* Fondo oscuro */
+    border-radius: 50%; /* Botón circular */
+    border: 1px solid #fff;
+  }
+</style>

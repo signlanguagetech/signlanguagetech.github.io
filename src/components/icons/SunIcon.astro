@@ -1,0 +1,49 @@
+---
+import type { Pixel } from '../../model/model';
+
+export interface Props {
+  readonly height: Pixel;
+  readonly width: Pixel;
+}
+
+const { height = '24px', width = '24px' } = Astro.props;
+---
+
+<svg
+  class="icon sun"
+  xmlns="http://www.w3.org/2000/svg"
+  height={height}
+  width={width}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round">
+    <circle cx="12" cy="12" r="5"></circle>
+    <path
+      d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+    ></path>
+</svg>
+
+<style>
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+  }
+
+  .icon.sun {
+    stroke: #ffffff; /* Color amarillo para el sol */
+  }
+
+  .toggle-button {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background-color: #4c4c4c; /* Fondo oscuro */
+    border-radius: 50%; /* Botón circular */
+    border: 1px solid #fff;
+  }
+</style>

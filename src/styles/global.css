@@ -231,9 +231,9 @@ hr {
 }
 
   /* Dark */
+  body.dark,
   body.dark code,
   body.dark p a,
-  body.dark,
   body.dark h1,
   body.dark h2,
   body.dark h3,
