@@ -15,6 +15,7 @@
   --accent-dark: #000d8a;
   --black: 15, 18, 25;
   --white: white;
+  --grey: 153 153 153;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
@@ -232,6 +233,8 @@ hr {
 
   /* Dark */
   body.dark,
+  body.dark .DocSearch-MagnifierLabel, .DocSearch-Reset,
+  body.dark .DocSearch-Button .DocSearch-Search-Icon,
   body.dark code,
   body.dark p a,
   body.dark h1,
@@ -256,7 +259,25 @@ hr {
     transition:color 2s;
   }
 
-  body.dark .DocSearch-Dropdown {
+  body.dark .DocSearch-Dropdown, 
+  body.dark .DocSearch-Form {
     background: #000;
 }
 
+body.dark button.DocSearch.DocSearch-Button {
+  border: 1px solid;
+}
+
+body.dark input#docsearch-input{
+  color: white;
+}
+
+body.dark form.DocSearch-Form {
+  border: 1px solid #fff;
+  box-shadow: none;
+}
+
+body.dark code{
+  background:rgb(var(--grey));
+
+}
