@@ -8,8 +8,13 @@ const isDarkMode = new Date().getHours() > 18 || new Date().getHours() < 6;
   <div class="toggle-container">
     <div class="toggle-button" id="toggle-button">
       <div class="toggle-circle"></div>
-      <IconSun height="24px" width="24px" />
-      <IconMoon height="24px" width="24px" />
+      <div class="custom-sun-icon">
+      <IconSun height="24px" width="24px"/>
+    </div>
+      <div class="custom-moon-icon">
+      <IconMoon height="24px" width="24px"/>
+    </div>
+
     </div>
   </div>
 </div>
@@ -75,4 +80,21 @@ const isDarkMode = new Date().getHours() > 18 || new Date().getHours() < 6;
   .toggle-button.dark .toggle-circle {
     transform: translateX(33px);
   }
+
+  .custom-moon-icon {
+  position: absolute;
+  top: 70%;
+  right: 5px;
+  transform: translateY(-50%);
+  stroke: #ffffff;  /* Color blanco para la luna */
+}
+
+.custom-sun-icon {
+  position: absolute;
+  top: 65%;
+  left: 7px;
+  transform: translateY(-50%);
+  stroke: #ffffff;  /* Color blanco para la luna */
+}
+
 </style>
