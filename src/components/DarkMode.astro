@@ -1,0 +1,100 @@
+---
+import IconSun from "./icons/SunIcon.astro";
+import IconMoon from "./icons/MoonIcon.astro";
+const isDarkMode = new Date().getHours() > 18 || new Date().getHours() < 6;
+---
+
+<div class={isDarkMode ? "dark" : ""}>
+  <div class="toggle-container">
+    <div class="toggle-button" id="toggle-button">
+      <div class="toggle-circle"></div>
+      <div class="custom-sun-icon">
+      <IconSun height="24px" width="24px"/>
+    </div>
+      <div class="custom-moon-icon">
+      <IconMoon height="24px" width="24px"/>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggleButton = document.getElementById("toggle-button");
+
+    const darkMode = localStorage.getItem("darkMode");
+
+    if (darkMode === "enabled") {
+      document.body.classList.add("dark");
+      toggleButton?.classList.add("dark");
+    }
+
+    toggleButton?.addEventListener("click", () => {
+      const isDark = document.body.classList.toggle("dark");
+      toggleButton?.classList.toggle("dark");
+      localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+    });
+  });
+</script>
+
+<style>
+  :root {
+    --background-color: white;
+    --text-color: black;
+    --text-color: white;
+    --toggle-background: #4c4c4c;
+    --toggle-color: #b3b3b3;
+    --toggle-circle: #a6a6a6;
+  }
+
+  .toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .toggle-button {
+    width: 70px;
+    height: 38px;
+    background-color: var(--toggle-background);
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition:
+      background-color 1s,
+      color 1s;
+    border: 1px solid #fff;
+    color: var(--text-color);
+  }
+
+  .toggle-circle {
+    width: 37px;
+    height: 37px;
+    background-color: var(--toggle-circle);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.3s;
+  }
+
+  .toggle-button.dark .toggle-circle {
+    transform: translateX(33px);
+  }
+
+  .custom-moon-icon {
+  position: absolute;
+  top: 70%;
+  right: 5px;
+  transform: translateY(-50%);
+  stroke: #ffffff;  /* Color blanco para la luna */
+}
+
+.custom-sun-icon {
+  position: absolute;
+  top: 65%;
+  left: 7px;
+  transform: translateY(-50%);
+  stroke: #ffffff;  /* Color blanco para la luna */
+}
+
+</style>

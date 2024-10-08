@@ -1,0 +1,28 @@
+---
+import type { Pixel } from '../../model/model';
+
+export interface Props {
+  readonly height: Pixel;
+  readonly width: Pixel;
+  readonly class?: string; 
+}
+
+
+const { height = '24px', width = '24px', class: customClass = '' } = Astro.props;
+---
+
+<svg
+  class={customClass}
+  xmlns="http://www.w3.org/2000/svg"
+  height={height}
+  width={width}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round">
+    <path
+      d="M21 12.79A9 9 0 0111.21 3a7 7 0 000 14 9 9 0 009.79-4.21z"
+    ></path>
+</svg>
