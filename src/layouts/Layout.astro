@@ -21,3 +21,10 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<script>
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const html = document.querySelector('html')
+
+  dark && html?.setAttribute('data-theme', 'dark');
+</script>
