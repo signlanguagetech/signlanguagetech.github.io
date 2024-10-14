@@ -18,7 +18,9 @@ import SltStackImg from '../components/icons/SltStackImg.astro';
           expand your knowledge, and empowers the deaf 
           and hard of hearing community.
         </h2>
-        <button class='primary-button'><a href='/blog'>Explore more</a></button>
+        <a href='/blog'>
+          <button class='primary-button'>Explore more</button>
+        </a>
       </div>
       <div class='section-right'>
         <SltStackImg width='300px' />
@@ -33,7 +35,9 @@ import SltStackImg from '../components/icons/SltStackImg.astro';
       </div>
     </section>
     <section class='main-content__explore-more'>
-      <button class='primary-button'><a href='/blog'>Explore more</a></button>
+      <a href='/blog'>
+        <button class='primary-button'>Explore more</button>
+      </a>
     </section>
   </main>
 </Layout>
@@ -62,9 +66,9 @@ import SltStackImg from '../components/icons/SltStackImg.astro';
     width: unset;
     padding: 15px;
   }
-  .primary-button a {
-    font-size: 1.5em;
-   }
+  .primary-button {
+    font-size: 1em;
+  }
   .main-content__intro {
     display: flex;
     justify-content: space-between;
@@ -108,6 +112,11 @@ import SltStackImg from '../components/icons/SltStackImg.astro';
     .pictures {
       flex-direction: column;
       height: unset;
+    }
+  }
+  @media (prefers-color-scheme: dark) { 
+    .sub-title {
+      color: rgb(var(--white), 0.5)
     }
   }
 </style>

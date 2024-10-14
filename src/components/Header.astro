@@ -16,16 +16,23 @@ import Search from './Search.astro';
         this.isOpen = !this.isOpen;
         document.body.style.overflow = this.isOpen ? "hidden" : "";
       },
-      isOpen: false, 
+      dark: window.matchMedia("(prefers-color-scheme: dark)").matches,
+      isOpen: false,
       width: 1920 
     }`
   x-init='width = window.innerWidth'
   x-on:resize.window='width = window.innerWidth'
 >
   <nav class='nav'>
+    <!-- <strong x-text="dark"></strong> -->
     <h1 class='sub-header'>
       <a class='nav-link slt-link' href='/'>
-        <SltIcon height='32px' width='32px' />
+        <template x-if="dark">
+          <SltIcon height='32px' width='32px' dark={true} />
+        </template>
+        <template x-if="!dark">
+          <SltIcon height='32px' width='32px' />
+        </template>
         <span class='slt-text'>Sign Language Tech</span>
       </a>
     </h1>
@@ -64,7 +71,7 @@ import Search from './Search.astro';
   .header {
     margin: 0;
     padding: 0 1em;
-    background: white;
+    background: rgb(var(--white));
     box-shadow: 0 2px 8px rgba(var(--black), 5%);
     display: flex;
     justify-content: center;
@@ -97,14 +104,13 @@ import Search from './Search.astro';
 
   .nav a {
     padding: 1em 0.5em;
-    color: var(--black);
     border-bottom: 4px solid transparent;
     text-decoration: none !important;
   }
 
   .nav a.active {
     text-decoration: none;
-    border-bottom-color: var(--accent);
+    border-bottom-color: var(--black);
   }
 
   .menu-icon {
@@ -132,8 +138,6 @@ import Search from './Search.astro';
       position: fixed;
       width: 100vw;
       height: 100vh;
-      color: white;
-      background-color: rgba(9, 9, 11, 0.9);
       top: 70px;
       left: 0;
       z-index: 100;
@@ -145,12 +149,22 @@ import Search from './Search.astro';
       align-items: center;
     }
 
-    .nav a.active {
-      border-bottom-color: white;
-    }
-
     .menu-icon {
       display: block;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .header {
+      background-color: rgb(var(--white), 0.2);
+    }
+
+    .slt-link {
+      color: rgb(var(--white))
+    }
+
+    .nav a.active {
+      border-bottom-color: rgba(var(--white), 0.5)
     }
   }
 </style>
