@@ -14,7 +14,8 @@
   --accent: #2337ff;
   --accent-dark: #000d8a;
   --black: 15, 18, 25;
-  --white: white;
+  --black-gradient: rgba(var(--black), 50%), var(--gray-light);
+  --white: 255, 255, 255;
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
@@ -203,7 +204,7 @@ hr {
 .primary-button {
   width: 100px;
   background-color: rgb(var(--gray));
-  color: var(--white);
+  color: rgb(var(--white));
   padding: 8px;
   border-radius: 5px;
   border-color: rgb(var(--gray));
@@ -227,5 +228,52 @@ hr {
 @media (max-width: 720px) {
   .youtube-frame {
     height: 215px;
+  }
+}
+
+@media (prefers-color-scheme: dark) { 
+  body {
+    background: linear-gradient(var(--black-gradient)) no-repeat;
+    background-color: rgb(var(--black));
+    color: rgba(var(--white), .5);
+  }
+
+  ::selection {
+    background-color: rgb(var(--white));
+    color: rgb(var(--black))
+  }
+  
+  a {
+    color: rgba(var(--white), .5);
+  }
+
+  a:hover {
+    color: rgb(var(--white), .8);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: rgb(var(--white), .8);
+  }
+
+  .primary-button {
+    background-color: rgb(var(--white));
+    color: rgb(var(--black))
+  }
+
+  .primary-button:hover {
+    background-color: rgb(var(--white), 0.8);
+  }
+
+  .primary-button:hover a {
+    color: rgb(var(--black))
+  }
+  
+  code {
+    background-color: rgba(var(--white), 0.1);
   }
 }

@@ -50,7 +50,7 @@ const { glossaries, currentSlug, currentGlossaryTitle } = Astro.props;
   <style>
     .sidebar-icon {
       display: none;
-      background: var(--white);
+      background: rgb(var(--white));
       cursor: pointer;
       align-items: center;
       justify-content: space-between;
@@ -72,14 +72,14 @@ const { glossaries, currentSlug, currentGlossaryTitle } = Astro.props;
     }
 
     .glossary-title:hover {
-      background: var(--white);
+      background: rgb(var(--white));
       padding-left: 5px;
       border-left: 3px rgb(var(--black)) solid;
       border-radius: 4px 0 0 4px;
     }
 
     .glossary-title.active {
-      background: var(--white);
+      background: rgb(var(--white));
       padding-left: 5px;
       border-left: 3px rgb(var(--gray-light)) solid;
       border-radius: 4px 0 0 4px;
@@ -101,6 +101,28 @@ const { glossaries, currentSlug, currentGlossaryTitle } = Astro.props;
         padding: 20px;
         z-index: 1;
         background: rgb(var(--gray-light));
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+
+      .glossary-title:hover {
+        background: rgb(var(--white), 0.8);
+        color: rgb(var(--black));
+        border-left-color: rgb(var(--white));
+      }
+
+      .glossary-title:hover a {
+        color: rgb(var(--black));
+      }
+
+      .glossary-title.active {
+        background: rgb(var(--white), 0.2);
+        border-left-color: rgb(var(--white));
+      }
+
+      .glossary-title.active a {
+        color: rgb(var(--white));
       }
     }
   </style>
