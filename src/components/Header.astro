@@ -141,6 +141,7 @@ import Search from './Search.astro';
       top: 70px;
       left: 0;
       z-index: 100;
+      background-color: rgb(var(--white));
     }
 
     .tabs {
@@ -152,13 +153,19 @@ import Search from './Search.astro';
     .menu-icon {
       display: block;
     }
+
+    @media (prefers-color-scheme: dark) {
+      .tabs-group {
+        background-color: rgb(var(--gray-dark));
+      }
+    }
+
   }
 
   @media (prefers-color-scheme: dark) {
     .header {
-      background-color: rgb(var(--white), 0.2);
+      background-color: rgb(var(--gray-dark));
     }
-
     .slt-link {
       color: rgb(var(--white))
     }
