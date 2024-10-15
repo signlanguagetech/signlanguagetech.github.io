@@ -30,12 +30,21 @@
 
   .consent-modal-body {
     padding: 20px;
-    background: #fff;
+    background: rgb(var(--white));
     border-radius: 7px;
   }
 
   .primary-button {
     float: right;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #consentModal {
+      background-color: rgba(var(--white), 0.75);
+    }
+    .consent-modal-body {
+      background: rgb(var(--black));
+    }
   }
 </style>
 
