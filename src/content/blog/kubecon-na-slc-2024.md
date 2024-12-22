@@ -20,6 +20,8 @@ tags:
 
 Welcome to Sign Language Tech! In this blog, I'm excited to share my unforgettable experience at the [Cloud-Native KubeCon North America SLC](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america) event. The long 20-hour flight was pretty tiring, but that didn't reduce my eagerness to explore the expansive venue. The energy and ambiance were wonderful, and I was truly proud to present my very first 30-minute talk. This adventure offers endless chances to learn and engage around every corner.
 
+![two men standing on the stage presenting the talk](/al-ml-operational-sides-talk.webp)
+
 ## An Event Like No Other
 
 KubeCon is truly impressive, and it takes a bit of energy to explore it all—whether you’re walking or running to catch every exciting moment. With countless booths and engaging talks, KubeCon is like a playground for cloud-native enthusiasts. If you haven't experienced it yet, I wholeheartedly recommend joining in. The atmosphere is buzzing with energy, and the excitement is absolutely contagious. You won’t want to miss out!
@@ -27,6 +29,8 @@ KubeCon is truly impressive, and it takes a bit of energy to explore it all—wh
 ## Beyond the Venue
 
 Our adventures took us beyond the main venue to a beautiful spot within the city. The environment was refreshingly unique, with dry and slightly chilly air accented by a salty breeze. It felt like stepping into another world, providing a perfect backdrop for deepening our experiences even further.
+
+![slc landscape](/slc-view.webp)
 
 ## Sharing Knowledge and Innovations
 
@@ -36,6 +40,10 @@ One of the highlights was delivering a 30-minute talk, my very first at a cloud-
 
 When our team received applause, it was an incredibly heartwarming moment. We also had fun sharing our sign names, adding a personal touch to our interactions. It was inspiring to see our group actively engaging with hearing individuals, showcasing our efforts and collaborative spirit through various activities, including open discussions and a sign language crash course.
 
+![crowded people learning and collaborating at sign language crash course](/sign-language-crash-course.webp)
+
 In conclusion, attending KubeCon was about more than just embracing technology and innovation; it was a profound experience centered on connection, learning, and community. I'm eagerly looking forward to the next opportunity to dive back into this vibrant ecosystem. If you’re interested, mark your calendar and come join us next time! Until then, stay connected and keep exploring the world of the [Cloud Native Computing Foundation](https://www.cncf.io) and the [Linux Foundation events](https://events.linuxfoundation.org) to stay in the loop.
+
+![A rust-colored metal sculpture resembling mountain peaks spelling SLC](/slc-mountian-metal.webp)
 
 Signing off with enthusiasm and anticipation for the future!
