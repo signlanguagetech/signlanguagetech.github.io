@@ -1,4 +1,4 @@
-import type { ContentEntryMap } from "astro:content";
+import type { DataEntryMap } from "astro:content";
 
 export type Pixel = `${string}px`;
 
@@ -7,4 +7,4 @@ export interface Tag {
   readonly count: number;
 }
 
-export type ContentKeys = keyof ContentEntryMap;
+export type ContentKeys = keyof DataEntryMap;
