@@ -18,7 +18,7 @@ tags:
   allowfullscreen>
 </iframe>
 
-Welcome to Sign Language Tech! In this blog, I'm excited to share my unforgettable experience at the [Cloud-Native KubeCon North America SLC](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america) event. The long 20-hour flight was pretty tiring, but that didn't reduce my eagerness to explore the expansive venue. The energy and ambiance were wonderful, and I was truly proud to present my very first 30-minute talk. This adventure offers endless chances to learn and engage around every corner.
+Welcome to Sign Language Tech! In this blog, I'm excited to share my unforgettable experience at the <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america" target="_blank">Cloud-Native KubeCon North America SLC</a> event. The long 20-hour flight was pretty tiring, but that didn't reduce my eagerness to explore the expansive venue. The energy and ambiance were wonderful, and I was truly proud to present my very first 30-minute talk. This adventure offers endless chances to learn and engage around every corner.
 
 ![two men standing on the stage presenting the talk](/al-ml-operational-sides-talk.webp)
 
@@ -34,7 +34,8 @@ Our adventures took us beyond the main venue to a beautiful spot within the city
 
 ## Sharing Knowledge and Innovations
 
-One of the highlights was delivering a 30-minute talk, my very first at a cloud-native event. It was an amazing experience, and we were thrilled to share insights, including an exciting sign about [Linkerd](https://linkerd.io), with such an engaged audience. You can watch the full talk through the link provided [here](https://youtu.be/5eQ1Kte-9Qw?si=2ZX5PPw5JJtNwMuD). I encourage you to explore it and delve into the fascinating discussions we had.
+One of the highlights was delivering a 30-minute talk, my very first at a cloud-native event. It was an amazing experience, and we were thrilled to share insights, including an exciting sign about <a href="https://linkerd.io" target="_blank">Linkerd</a>, with such an engaged audience. You can watch the full talk through the link provided 
+<a href="https://youtu.be/5eQ1Kte-9Qw?si=2ZX5PPw5JJtNwMuD" target="_blank">here</a>. I encourage you to explore it and delve into the fascinating discussions we had.
 
 ## Celebrating Connections and Collaborations
 
@@ -42,7 +43,7 @@ When our team received applause, it was an incredibly heartwarming moment. We al
 
 ![crowded people learning and collaborating at sign language crash course](/sign-language-crash-course.webp)
 
-In conclusion, attending KubeCon was about more than just embracing technology and innovation; it was a profound experience centered on connection, learning, and community. I'm eagerly looking forward to the next opportunity to dive back into this vibrant ecosystem. If you’re interested, mark your calendar and come join us next time! Until then, stay connected and keep exploring the world of the [Cloud Native Computing Foundation](https://www.cncf.io) and the [Linux Foundation events](https://events.linuxfoundation.org) to stay in the loop.
+In conclusion, attending KubeCon was about more than just embracing technology and innovation; it was a profound experience centered on connection, learning, and community. I'm eagerly looking forward to the next opportunity to dive back into this vibrant ecosystem. If you’re interested, mark your calendar and come join us next time! Until then, stay connected and keep exploring the world of the <a href="https://www.cncf.io" target="_blank">Cloud Native Computing Foundation</a> and the <a href="https://events.linuxfoundation.org" target="_blank">Linux Foundation events</a> to stay in the loop.
 
 ![A rust-colored metal sculpture resembling mountain peaks spelling SLC](/slc-mountian-metal.webp)
 
