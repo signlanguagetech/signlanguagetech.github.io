@@ -105,6 +105,9 @@ const { glossaries, currentSlug, currentGlossaryTitle } = Astro.props;
     }
 
     @media (prefers-color-scheme: dark) {
+      .sidebar-icon {
+        background: rgb(var(--white), 0.03);
+      }
 
       .glossary-title:hover {
         background: rgb(var(--white), 0.8);
@@ -123,6 +126,10 @@ const { glossaries, currentSlug, currentGlossaryTitle } = Astro.props;
 
       .glossary-title.active a {
         color: rgb(var(--white));
+      }
+
+      .list {
+        background: rgb(var(--white), 0.03);
       }
     }
   </style>
