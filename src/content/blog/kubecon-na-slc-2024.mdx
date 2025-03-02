@@ -8,6 +8,12 @@ tags:
   - Cloud Native
 ---
 
+import { Image } from 'astro:assets'
+import AlMlOperationalSidesTalk from '/public/al-ml-operational-sides-talk.webp'
+import SlcView from '/public/slc-view.webp'
+import SignLanguageCrashCourse from '/public/sign-language-crash-course.webp'
+import SlcMountainMetal from '/public/slc-mountain-metal.webp'
+
 <iframe 
   class="youtube-frame"
   src="https://www.youtube.com/embed/iu60I44THCw?si=uX98BsHehwSeKF7_"
@@ -20,7 +26,13 @@ tags:
 
 Welcome to Sign Language Tech! In this blog, I'm excited to share my unforgettable experience at the <a href="https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america" target="_blank">Cloud-Native KubeCon North America SLC</a> event. The long 20-hour flight was pretty tiring, but that didn't reduce my eagerness to explore the expansive venue. The energy and ambiance were wonderful, and I was truly proud to present my very first 30-minute talk. This adventure offers endless chances to learn and engage around every corner.
 
-![two men standing on the stage presenting the talk](/al-ml-operational-sides-talk.webp)
+<Image 
+  src={AlMlOperationalSidesTalk}
+  alt='two men standing on the stage presenting the talk'
+  layout="responsive"
+  width={640}
+  height={480}
+/>
 
 ## An Event Like No Other
 
@@ -30,7 +42,13 @@ KubeCon is truly impressive, and it takes a bit of energy to explore it all—wh
 
 Our adventures took us beyond the main venue to a beautiful spot within the city. The environment was refreshingly unique, with dry and slightly chilly air accented by a salty breeze. It felt like stepping into another world, providing a perfect backdrop for deepening our experiences even further.
 
-![slc landscape](/slc-view.webp)
+<Image 
+  src={SlcView}
+  alt='Aerial view of the city of SLC'
+  layout="responsive"
+  width={640}
+  height={480}
+/>
 
 ## Sharing Knowledge and Innovations
 
@@ -41,10 +59,22 @@ One of the highlights was delivering a 30-minute talk, my very first at a cloud-
 
 When our team received applause, it was an incredibly heartwarming moment. We also had fun sharing our sign names, adding a personal touch to our interactions. It was inspiring to see our group actively engaging with hearing individuals, showcasing our efforts and collaborative spirit through various activities, including open discussions and a sign language crash course.
 
-![crowded people learning and collaborating at sign language crash course](/sign-language-crash-course.webp)
+<Image 
+  src={SignLanguageCrashCourse}
+  alt='crowded people learning and collaborating at sign language crash course'
+  layout="responsive"
+  width={640}
+  height={480}
+/>
 
 In conclusion, attending KubeCon was about more than just embracing technology and innovation; it was a profound experience centered on connection, learning, and community. I'm eagerly looking forward to the next opportunity to dive back into this vibrant ecosystem. If you’re interested, mark your calendar and come join us next time! Until then, stay connected and keep exploring the world of the <a href="https://www.cncf.io" target="_blank">Cloud Native Computing Foundation</a> and the <a href="https://events.linuxfoundation.org" target="_blank">Linux Foundation events</a> to stay in the loop.
 
-![A rust-colored metal sculpture resembling mountain peaks spelling SLC](/slc-mountian-metal.webp)
+<Image 
+  src={SlcMountainMetal}
+  alt='A rust-colored metal sculpture resembling mountain peaks spelling SLC'
+  layout="responsive"
+  width={640}
+  height={480}
+/>
 
 Signing off with enthusiasm and anticipation for the future!
